@@ -6,6 +6,6 @@ abstract class AppBase {
   late var appPrint = AppPrint();
   late var appColor = AppColors();
 
-  //  appColor
-  void myVeeraMethod();
+  // ? This method can use, but i hide
+  // void myVeeraMethod();
 }

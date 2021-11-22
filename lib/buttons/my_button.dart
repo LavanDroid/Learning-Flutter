@@ -1,7 +1,9 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/appbase/app_base.dart';
 import 'package:flutter_demo/custom_appbar/base_appbar.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MyButtons extends StatefulWidget {
   const MyButtons({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class MyButtons extends StatefulWidget {
   _MyButtonsState createState() => _MyButtonsState();
 }
 
-class _MyButtonsState extends State<MyButtons> {
+class _MyButtonsState extends State<MyButtons> with AppBase {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +55,64 @@ class _MyButtonsState extends State<MyButtons> {
                     Navigator.pop(context);
                   },
                   child: const Text('Go Back!')),
+              const SizedBox(
+                height: 50.0,
+              ),
+              const Text(
+                'Elevate Button',
+                style: TextStyle(
+                    fontSize: 25.0,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold),
+              ),
+              ElevatedButton(
+                  onPressed: () => {
+                        //appPrint('Button 1'),
+                        Fluttertoast.showToast(msg: "Button 1")
+                      },
+                  child: const Text('Button 1')),
+              const SizedBox(
+                height: 50.0,
+              ),
+              const Text(
+                'Text Button',
+                style: TextStyle(
+                    fontSize: 25.0,
+                    color: Colors.red,
+                    decoration: TextDecoration.underline,
+                    decorationStyle: TextDecorationStyle.dashed,
+                    decorationColor: Colors.green,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 25.0,
+              ),
+              TextButton(
+                onPressed: () => appPrint('Click Me'),
+                child: const Text(
+                  'Click Me',
+                  style: TextStyle(fontSize: 20.0, color: Colors.pinkAccent),
+                ),
+              ),
+              TextButton(
+                onPressed: () => appPrint('Button 2'),
+                child: const Text(
+                  'Button 2',
+                  style: TextStyle(fontSize: 25.0),
+                ),
+                style: TextButton.styleFrom(
+                    primary: Colors.greenAccent,
+                    backgroundColor: Colors.purple),
+              ),
+              /* child: Text(
+                  'Button 2',
+                  style: 
+                  (
+                      fontSize: 20.0,
+                      color: Colors.greenAccent,
+                      backgroundColor: Colors.purple),
+                ), 
+              )),*/
             ],
           ),
         ),

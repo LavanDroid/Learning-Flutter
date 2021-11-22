@@ -4,6 +4,7 @@ import 'package:flutter_demo/appbase/app_base.dart';
 import 'package:flutter_demo/appbase/app_string.dart';
 import 'package:flutter_demo/buttons/my_button.dart';
 import 'package:flutter_demo/custom_appbar/my_appbar.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   // runApp(const MyApp());
@@ -154,11 +155,6 @@ class _MyDemoState extends State<MyDemo> with AppBase {
     );
   }
 
-  @override
-  void myVeeraMethod() {
-    //? implement myVeeraMethod
-  }
-
   void showToast(BuildContext context, String name, int idx) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text('Clicked Item: $name -> $idx'),
@@ -181,6 +177,18 @@ class _MyDemoState extends State<MyDemo> with AppBase {
           Navigator.push(mContext,
               MaterialPageRoute(builder: (mContext) => const MyAppBar()));
           //nextAction(const MyAppBar());
+          break;
+        }
+      case "Toast":
+        {
+          Fluttertoast.showToast(
+              msg: "This is my toast",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.CENTER,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.grey,
+              textColor: Colors.white,
+              fontSize: 16.0);
           break;
         }
       default:
