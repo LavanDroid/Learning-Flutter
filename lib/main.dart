@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_demo/appbase/app_base.dart';
 import 'package:flutter_demo/appbase/app_string.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_demo/buttons/my_button.dart';
+import 'package:flutter_demo/custom_appbar/my_appbar.dart';
 
 void main() {
   // runApp(const MyApp());
@@ -36,11 +38,25 @@ class MyDemo extends StatefulWidget {
 
 class _MyDemoState extends State<MyDemo> with AppBase {
   //late var appPrint;
+  late List<String> mListview;
+  late BuildContext mContext;
 
   @override
   void initState() {
     super.initState();
     //appPrint = AppPrint();
+    mListview = [
+      "Button",
+      "Toast",
+      "Dialog",
+      "AppBar",
+      "Textview",
+      "Edittext",
+      "ListView",
+      "DropDown",
+      "PopMenu"
+    ];
+    mListview.sort();
   }
 
   @override
@@ -56,7 +72,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
             icon: const Icon(Icons.menu),
             onPressed: () {
               // ignore: avoid_print
-              print('Menu Clicked');
+              print('Clicked Menu');
             },
           ),
           // automaticallyImplyLeading: false,
@@ -64,13 +80,13 @@ class _MyDemoState extends State<MyDemo> with AppBase {
             IconButton(
                 onPressed: () {
                   // ignore: avoid_print
-                  print('Search Clicked ' + AppStrings.welcomeMessage);
+                  print('Clicked Search ' + AppStrings.welcomeMessage);
                 },
                 icon: const Icon(Icons.search)),
             IconButton(
                 onPressed: () {
                   // ignore: avoid_print
-                  print('More Clicked');
+                  print('Clicked More');
                   // appPrint('inProduction Mode : $inProduction');
                   appPrint('inProduction Mode');
                 },
@@ -109,13 +125,73 @@ class _MyDemoState extends State<MyDemo> with AppBase {
               ),
               preferredSize: const Size.fromHeight(75.0)),
         ),
-        body: Container(),
+        body: Column(
+          children: [
+            Expanded(
+                child: ListView.builder(
+                    itemCount: mListview.length,
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int idx) {
+                      mContext = context;
+                      final item = mListview[idx];
+                      return Card(
+                        elevation: 5.0,
+                        child: ListTile(
+                          title: Text(item),
+                          trailing: const Icon(Icons.keyboard_arrow_right),
+                          onTap: () {
+                            showToast(context, item, idx);
+                            checkNextAction(item);
+                          },
+                        ),
+                        color: Colors.greenAccent,
+                      );
+                    }))
+          ],
+        ),
       ),
     );
   }
 
   @override
   void myVeeraMethod() {
-    // TODO: implement myVeeraMethod
+    //? implement myVeeraMethod
   }
+
+  void showToast(BuildContext context, String name, int idx) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('Clicked Item: $name -> $idx'),
+      duration: const Duration(seconds: 2),
+    ));
+  }
+
+// ? Depends on list name move to the specify the screen
+  void checkNextAction(String name) {
+    switch (name) {
+      case "Button":
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyButtons()));
+          // nextAction(const MyButtons());
+          break;
+        }
+      case "AppBar":
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyAppBar()));
+          //nextAction(const MyAppBar());
+          break;
+        }
+      default:
+        {
+          appPrint("Yet to create $name screen");
+        }
+    }
+  }
+
+  /* void nextAction(MyButtons screen) {
+    Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyButtons()));
+  } */
 }
