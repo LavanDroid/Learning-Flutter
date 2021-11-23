@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/appbase/app_extension.dart';
 
-class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   //const BaseAppBar({Key? key}) : super(key: key);
   final Color? bgColor;
   final Color? textIconColor;
@@ -13,7 +13,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? whereFrom;
   var appPrint = AppPrint();
 
-  BaseAppBar({
+  CommonAppBar({
     Key? key,
     this.bgColor = const Color(0xff6200ee),
     this.textIconColor = Colors.white,

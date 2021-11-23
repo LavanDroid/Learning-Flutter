@@ -4,6 +4,7 @@ import 'package:flutter_demo/appbase/app_base.dart';
 import 'package:flutter_demo/appbase/app_string.dart';
 import 'package:flutter_demo/buttons/my_button.dart';
 import 'package:flutter_demo/custom_appbar/my_appbar.dart';
+import 'package:flutter_demo/radio_button/my_radio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
@@ -55,7 +56,8 @@ class _MyDemoState extends State<MyDemo> with AppBase {
       "Edittext",
       "ListView",
       "DropDown",
-      "PopMenu"
+      "PopMenu",
+      "Radio Button",
     ];
     mListview.sort();
   }
@@ -142,7 +144,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
                           title: Text(item),
                           trailing: const Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            showToast(context, item, idx);
+                            showSnake(context, item, idx);
                             checkNextAction(item);
                           },
                         ),
@@ -155,7 +157,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
     );
   }
 
-  void showToast(BuildContext context, String name, int idx) {
+  void showSnake(BuildContext context, String name, int idx) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text('Clicked Item: $name -> $idx'),
       duration: const Duration(seconds: 2),
@@ -179,6 +181,12 @@ class _MyDemoState extends State<MyDemo> with AppBase {
           //nextAction(const MyAppBar());
           break;
         }
+        case "Radio Button":
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyRadioButton()));
+          break;
+        }
       case "Toast":
         {
           Fluttertoast.showToast(
@@ -188,7 +196,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
               timeInSecForIosWeb: 1,
               backgroundColor: Colors.grey,
               textColor: Colors.white,
-              fontSize: 16.0);
+              fontSize: 18.0);
           break;
         }
       default:
