@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/appbase/app_base.dart';
-import 'package:flutter_demo/custom_appbar/common_appbar.dart';
-import 'package:flutter_demo/radio_button/radio_button.dart';
+import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/radio_button/radio_button.dart';
 
 class MyRadioButton extends StatefulWidget {
   const MyRadioButton({Key? key}) : super(key: key);
@@ -22,37 +22,44 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[300],
-      appBar: CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
-        title: 'Radio Buttons',
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _wSizeBox(height: 25.0),
-              _wTextRadioButton(),
-              _wRadioGroupButton(),
-              _wSizeBox(height: 25.0),
-              _wRadioListTileButton(),
-              _wSizeBox(height: 25.0),
-              _wRowRadioButton(),
-              _wSizeBox(height: 25.0),
-              _wListTileRadioButton(),
-              _wSizeBox(height: 25.0),
-              // _wListTileRadioTileButton(),
-              // _wSizeBox(height: 50.0),
-            ],
+  Widget build(BuildContext context) => Container(
+        child: _wAppBar(),
+      );
+
+  Widget _wAppBar() => Scaffold(
+        backgroundColor: appColor.mGrey,
+        appBar: CommonAppBar(
+          icon: 'assets/images/ic_custom_back.png',
+          title: 'Radio Buttons',
+        ),
+        body: _wRadioButtonScreen(),
+      );
+
+  Widget _wRadioButtonScreen() => SafeArea(
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                _wSizeBox(),
+                _wTextRadioButton(),
+                _wRadioGroupButton(),
+                _wSizeBox(),
+                _wRadioListTileButton(),
+                _wSizeBox(),
+                _wRowRadioButton(),
+                _wSizeBox(),
+                _wListTileRadioButton(),
+                _wSizeBox(),
+                // _wListTileRadioTileButton(),
+                // _wSizeBox(height: 50.0),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 
   Widget _wSizeBox({double height = 25.0}) {
     return SizedBox(

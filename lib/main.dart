@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_demo/appbase/app_base.dart';
 import 'package:flutter_demo/appbase/app_string.dart';
-import 'package:flutter_demo/buttons/my_button.dart';
-import 'package:flutter_demo/custom_appbar/my_appbar.dart';
-import 'package:flutter_demo/radio_button/my_radio.dart';
+import 'package:flutter_demo/model/main_model.dart';
+import 'package:flutter_demo/screens/buttons/my_button.dart';
+import 'package:flutter_demo/screens/check_box/my_check_box.dart';
+import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
+import 'package:flutter_demo/screens/radio_button/my_radio.dart';
+import 'package:flutter_demo/screens/switch_button/my_switch.dart';
+import 'package:flutter_demo/screens/textview/my_textview.dart';
+import 'package:flutter_demo/screens/toggle_button/my_toggle.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
@@ -40,26 +45,83 @@ class MyDemo extends StatefulWidget {
 
 class _MyDemoState extends State<MyDemo> with AppBase {
   //late var appPrint;
-  late List<String> mListview;
+  //late List<String> mListview;
+  late List<MainModel> mListview; // = [MainModel.dummy()];
   late BuildContext mContext;
 
   @override
   void initState() {
     super.initState();
     //appPrint = AppPrint();
+
+    // mListview = [
+    //   "Button",
+    //   "Toast",
+    //   "Dialog",
+    //   "AppBar",
+    //   "Textview",
+    //   "Edittext",
+    //   "ListView",
+    //   "DropDown",
+    //   "PopMenu",
+    //   "Radio Button",
+    // ];
     mListview = [
-      "Button",
-      "Toast",
-      "Dialog",
-      "AppBar",
-      "Textview",
-      "Edittext",
-      "ListView",
-      "DropDown",
-      "PopMenu",
-      "Radio Button",
+      MainModel(
+        name: "Button",
+        id: 1,
+      ),
+      MainModel(
+        name: "Toast",
+        id: 2,
+      ),
+      MainModel(
+        name: "Dialog",
+        id: 3,
+      ),
+      MainModel(
+        name: "AppBar",
+        id: 4,
+      ),
+      MainModel(
+        name: "Textview",
+        id: 5,
+      ),
+      MainModel(
+        name: "Edittext",
+        id: 6,
+      ),
+      MainModel(
+        name: "ListView",
+        id: 7,
+      ),
+      MainModel(
+        name: "DropDown",
+        id: 8,
+      ),
+      MainModel(
+        name: "PopMenu",
+        id: 9,
+      ),
+      MainModel(
+        name: "Button Radio",
+        id: 10,
+      ),
+      MainModel(
+        name: "Button Switch",
+        id: 11,
+      ),
+      MainModel(
+        name: "Button Toggle",
+        id: 12,
+      ),
+      MainModel(
+        name: "Check Box",
+        id: 13,
+      ),
     ];
-    mListview.sort();
+    //mListview.sort();
+    mListview.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override
@@ -128,30 +190,32 @@ class _MyDemoState extends State<MyDemo> with AppBase {
               ),
               preferredSize: const Size.fromHeight(75.0)),
         ),
-        body: Column(
-          children: [
-            Expanded(
-                child: ListView.builder(
-                    itemCount: mListview.length,
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    itemBuilder: (BuildContext context, int idx) {
-                      mContext = context;
-                      final item = mListview[idx];
-                      return Card(
-                        elevation: 5.0,
-                        child: ListTile(
-                          title: Text(item),
-                          trailing: const Icon(Icons.keyboard_arrow_right),
-                          onTap: () {
-                            showSnake(context, item, idx);
-                            checkNextAction(item);
-                          },
-                        ),
-                        color: Colors.greenAccent,
-                      );
-                    }))
-          ],
+        body: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                  child: ListView.builder(
+                      itemCount: mListview.length,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      itemBuilder: (BuildContext context, int idx) {
+                        mContext = context;
+                        final item = mListview[idx];
+                        return Card(
+                          elevation: 5.0,
+                          child: ListTile(
+                            title: Text(item.name),
+                            trailing: const Icon(Icons.keyboard_arrow_right),
+                            onTap: () {
+                              showSnake(context, item.name, idx);
+                              checkNextAction(item);
+                            },
+                          ),
+                          color: Colors.greenAccent,
+                        );
+                      }))
+            ],
+          ),
         ),
       ),
     );
@@ -165,29 +229,16 @@ class _MyDemoState extends State<MyDemo> with AppBase {
   }
 
 // ? Depends on list name move to the specify the screen
-  void checkNextAction(String name) {
-    switch (name) {
-      case "Button":
+  void checkNextAction(MainModel item) {
+    switch (item.id) {
+      case 1:
         {
           Navigator.push(mContext,
               MaterialPageRoute(builder: (mContext) => const MyButtons()));
           // nextAction(const MyButtons());
           break;
         }
-      case "AppBar":
-        {
-          Navigator.push(mContext,
-              MaterialPageRoute(builder: (mContext) => const MyAppBar()));
-          //nextAction(const MyAppBar());
-          break;
-        }
-        case "Radio Button":
-        {
-          Navigator.push(mContext,
-              MaterialPageRoute(builder: (mContext) => const MyRadioButton()));
-          break;
-        }
-      case "Toast":
+      case 2:
         {
           Fluttertoast.showToast(
               msg: "This is my toast",
@@ -199,9 +250,46 @@ class _MyDemoState extends State<MyDemo> with AppBase {
               fontSize: 18.0);
           break;
         }
+      case 4:
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyAppBar()));
+          //nextAction(const MyAppBar());
+          break;
+        }
+      case 5:
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyTextView()));
+          break;
+        }
+      case 10:
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyRadioButton()));
+          break;
+        }
+      case 11:
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MySwitchButton()));
+          break;
+        }
+      case 12:
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyToggleButton()));
+          break;
+        }
+      case 13:
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyCheckBox()));
+          break;
+        }
       default:
         {
-          appPrint("Yet to create $name screen");
+          appPrint("Yet to create $item.name screen");
         }
     }
   }
