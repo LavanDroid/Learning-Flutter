@@ -164,6 +164,10 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
     return Column(
       children: [
         ListTile(
+          onTap: () => setState(() {
+            _radioGroupValue = '7';
+            showToast(_radioGroupValue ?? 'Something Wrong onTap');
+          }),
           leading: Transform.scale(
             scale: 1.5,
             child: Radio(
@@ -173,9 +177,16 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
               activeColor: Colors.redAccent,
             ),
           ),
-          title: const Text('ListTile Radio One'),
+          title: const Text(
+            'ListTile Radio One',
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
         ),
         ListTile(
+          onTap: () => setState(() {
+            _radioGroupValue = '8';
+            showToast(_radioGroupValue ?? 'Something Wrong onTap');
+          }),
           leading: Transform.scale(
             scale: 1.5,
             child: Radio(
@@ -185,7 +196,10 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
               activeColor: Colors.redAccent,
             ),
           ),
-          title: const Text('ListTile Radio Two'),
+          title: const Text(
+            'ListTile Radio Two',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
       ],
     );

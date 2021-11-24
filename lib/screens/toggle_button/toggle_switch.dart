@@ -146,36 +146,28 @@ class _ToggleSwitchState extends State<ToggleSwitch>
     super.build(context);
 
     /// Assigns active background color to default primary theme color if it's null/not provided.
-    activeBgColor = widget.activeBgColor == null
-        ? [Theme.of(context).primaryColor]
-        : widget.activeBgColor;
+    activeBgColor = widget.activeBgColor ?? [Theme.of(context).primaryColor];
 
     /// Assigns active foreground color to default accent text theme color if it's null/not provided.
-    activeFgColor = widget.activeFgColor == null
-        ? Theme.of(context).primaryTextTheme.bodyText1!.color
-        : widget.activeFgColor;
+    activeFgColor = widget.activeFgColor ??
+        Theme.of(context).primaryTextTheme.bodyText1!.color;
 
     /// Assigns inactive background color to default disabled theme color if it's null/not provided.
-    inactiveBgColor = widget.inactiveBgColor == null
-        ? Theme.of(context).disabledColor
-        : widget.inactiveBgColor;
+    inactiveBgColor = widget.inactiveBgColor ?? Theme.of(context).disabledColor;
 
     /// Assigns inactive foreground color to default text theme color if it's null/not provided.
-    inactiveFgColor = widget.inactiveFgColor == null
-        ? Theme.of(context).textTheme.bodyText1!.color
-        : widget.inactiveFgColor;
+    inactiveFgColor =
+        widget.inactiveFgColor ?? Theme.of(context).textTheme.bodyText1!.color;
 
     /// Assigns transparent border color if it's null/not provided.
-    borderColor =
-        widget.borderColor == null ? [Colors.transparent] : widget.borderColor;
+    borderColor = widget.borderColor ?? [Colors.transparent];
 
     /// Assigns default border width.
     ///
     /// Assigns default border width of 0.0 if border color is null.
     /// Assigns default border width of 3.0 if border width is null but border color is not.
-    borderWidth = widget.borderWidth == null
-        ? (widget.borderColor == null ? 0.0 : 3.0)
-        : widget.borderWidth;
+    borderWidth =
+        widget.borderWidth ?? (widget.borderColor == null ? 0.0 : 3.0);
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(widget.cornerRadius),

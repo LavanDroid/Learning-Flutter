@@ -62,9 +62,9 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
                 _wSizeBox(),
                 _wCustomGradientRainbow(),
                 _wSizeBox(),
-                _wCustomGradientText(),
-                _wSizeBox(),
                 _wCustomGradientFadeOut(),
+                _wSizeBox(),
+                _wCustomGradientText(),
                 _wSizeBox(),
                 _wGradientTextviewTwo(),
                 _wSizeBox(height: 50.0),
@@ -231,15 +231,6 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         ]),
       );
 
-  Widget _wCustomGradientText() => GradientText(
-        'Gradient Text',
-        style: const TextStyle(fontSize: 40),
-        gradient: LinearGradient(colors: [
-          Colors.blue.shade400,
-          Colors.blue.shade900,
-        ]),
-      );
-
   Widget _wCustomGradientFadeOut() => GradientText(
         'Fade out',
         style: const TextStyle(fontSize: 40),
@@ -253,8 +244,17 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         ),
       );
 
+  Widget _wCustomGradientText() => GradientText(
+        'Linear Gradient',
+        style: const TextStyle(fontSize: 40),
+        gradient: LinearGradient(colors: [
+          Colors.blue.shade400,
+          Colors.blue.shade900,
+        ]),
+      );
+
   Widget _wGradientTextviewTwo() => Text(
-        'Greetings, planet!',
+        'Paint Gradient',
         style: TextStyle(
             fontSize: 40,
             foreground: Paint()
@@ -263,7 +263,7 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
                 const Offset(150, 20),
                 <Color>[
                   Colors.red,
-                  Colors.yellow,
+                  Colors.lime,
                 ],
               )),
       );

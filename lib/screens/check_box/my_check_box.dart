@@ -11,14 +11,12 @@ class MyCheckBox extends StatefulWidget {
 }
 
 class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
-  bool mValue = false;
+  bool mValue = false, mValue2 = false;
 
   final mListBox = [
     CheckBoxModel(name: 'CheckBox One'),
     CheckBoxModel(name: 'CheckBox Two'),
     CheckBoxModel(name: 'CheckBox Three'),
-    CheckBoxModel(name: 'CheckBox Four'),
-    CheckBoxModel(name: 'CheckBox Five'),
   ];
   @override
   Widget build(BuildContext context) => Container(
@@ -49,6 +47,9 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
                 _wMultipleTitle(),
                 ...mListBox.map(_wMultipleBox).toList(),
                 _wSizeBox(),
+                _wListTileTitle(),
+                _wListTileBox(),
+                _wSizeBox(),
                 // _wListTileRadioTileButton(),
                 // _wSizeBox(height: 50.0),
               ],
@@ -64,7 +65,7 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
   }
 
   Widget _wBasicTitle() => const Text(
-        'Basic Check Box',
+        'Basic',
         style: TextStyle(
           fontSize: 25.0,
           color: Colors.brown,
@@ -79,13 +80,13 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
             fontSize: 20.0,
           ),
         ),
-        onChanged: (value) => mValue = value!,
+        onChanged: (value) => setState(() => mValue = value!),
         activeColor: Colors.red,
         controlAffinity: ListTileControlAffinity.leading,
       );
 
   Widget _wMultipleTitle() => const Text(
-        'Multiple Check Box',
+        'Multiple Select',
         style: TextStyle(
           fontSize: 25.0,
           color: Colors.brown,
@@ -100,8 +101,33 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
             fontSize: 20.0,
           ),
         ),
-        onChanged: (value) => checkBox.isCheck = value!,
+        onChanged: (value) => setState(() {
+          checkBox.isCheck = value!;
+          /* for (var element in mListBox) {
+            appPrint(element.name + ': ' + element.isCheck.toString());
+          } */
+        }),
         activeColor: Colors.red,
         controlAffinity: ListTileControlAffinity.leading,
+      );
+
+  Widget _wListTileTitle() => const Text(
+        'ListTile',
+        style: TextStyle(
+          fontSize: 25.0,
+          color: Colors.brown,
+        ),
+      );
+
+  Widget _wListTileBox() => ListTile(
+        onTap: () => setState(() => mValue2 = !mValue2),
+        leading: Checkbox(
+          value: mValue2,
+          onChanged: (value) => setState(() => mValue2 = value!),
+        ),
+        title: const Text(
+          'Click Me',
+          style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+        ),
       );
 }
