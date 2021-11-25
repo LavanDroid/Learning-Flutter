@@ -4,6 +4,7 @@ import 'package:flutter_demo/appbase/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 import 'package:flutter_demo/screens/textview/gradient_text.dart';
 import 'package:flutter_demo/screens/textview/marquee_widget.dart';
+import 'package:flutter_demo/screens/textview/readmore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui' as ui;
 
@@ -52,6 +53,8 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
                 _wPaintTextview(),
                 _wSizeBox(),
                 _wMultipleLineTextview(),
+                _wSizeBox(),
+                _wReadMoreText(),
                 _wSizeBox(),
                 _wRichText(),
                 _wSizeBox(),
@@ -140,6 +143,19 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         //maxLines: 1,
         // End of text ...
         overflow: TextOverflow.ellipsis,
+      );
+
+  Widget _wReadMoreText() => const ReadMoreText(
+        'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase. Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.',
+        trimLines: 2,
+        colorClickableText: Colors.pink,
+        trimMode: TrimMode.mLine,
+        style: TextStyle(
+          fontSize: 17.0,
+          color: Colors.black,
+        ),
+        trimCollapsedText: 'Show more',
+        trimExpandedText: ' show less',
       );
 
   Widget _wRichText() => RichText(
