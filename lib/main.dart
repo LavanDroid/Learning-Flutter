@@ -8,6 +8,7 @@ import 'package:flutter_demo/screens/check_box/my_check_box.dart';
 import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
+import 'package:flutter_demo/screens/textfield/my_textfield.dart';
 import 'package:flutter_demo/screens/textview/my_textview.dart';
 import 'package:flutter_demo/screens/toggle_button/my_toggle.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -18,11 +19,10 @@ void main() {
 
   // ? Force to portrait mode //
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-          [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
-      .then((_) => runApp(
-            const MyDemo(),
-          ));
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((_) => runApp(const MyDemo()));
 }
 
 /* class MyApp extends StatelessWidget {
@@ -88,7 +88,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
         id: 5,
       ),
       MainModel(
-        name: "Edittext",
+        name: "Text Feild (Edittext)",
         id: 6,
       ),
       MainModel(
@@ -261,6 +261,12 @@ class _MyDemoState extends State<MyDemo> with AppBase {
         {
           Navigator.push(mContext,
               MaterialPageRoute(builder: (mContext) => const MyTextView()));
+          break;
+        }
+      case 6:
+        {
+          Navigator.push(mContext,
+              MaterialPageRoute(builder: (mContext) => const MyTextField()));
           break;
         }
       case 10:
