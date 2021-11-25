@@ -46,16 +46,16 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wTextRadioButton(),
                 _wRadioGroupButton(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wRadioListTileButton(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wRowRadioButton(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wListTileRadioButton(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 // _wListTileRadioTileButton(),
                 // _wSizeBox(height: 50.0),
               ],
@@ -63,12 +63,6 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
           ),
         ),
       );
-
-  Widget _wSizeBox({double height = 25.0}) {
-    return SizedBox(
-      height: height,
-    );
-  }
 
   Widget _wTextRadioButton() {
     return Container(
@@ -144,7 +138,7 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
           groupValue: _radioGroupValue,
           onChanged: _valueChangedHandler(),
         ),
-        _wSizeBox(height: 10.0),
+        const SizedBox(height: 10.0),
         const Text(
           'Radio One',
           style: TextStyle(color: Colors.pink),
@@ -154,7 +148,7 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
           groupValue: _radioGroupValue,
           onChanged: _valueChangedHandler(),
         ),
-        _wSizeBox(height: 10.0),
+        const SizedBox(height: 10.0),
         const Text(
           'Radio Two',
           style: TextStyle(fontSize: 30.0),

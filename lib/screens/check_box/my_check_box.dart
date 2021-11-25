@@ -43,16 +43,16 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wBasicTitle(),
                 _wBasicBox(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wMultipleTitle(),
                 ...mListBox.map(_wMultipleBox).toList(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wListTileTitle(),
                 _wListTileBox(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 // _wListTileRadioTileButton(),
                 // _wSizeBox(height: 50.0),
               ],
@@ -60,12 +60,6 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
           ),
         ),
       );
-
-  Widget _wSizeBox({double height = 25.0}) {
-    return SizedBox(
-      height: height,
-    );
-  }
 
   Widget _wBasicTitle() => const Text(
         'Basic',

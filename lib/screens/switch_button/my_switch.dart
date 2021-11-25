@@ -17,8 +17,8 @@ class _MySwitchButtonState extends State<MySwitchButton> with AppBase {
       );
 
   Widget _wAppBar() => GestureDetector(
-    onTap: () => hideKeyBoard(),
-    child: Scaffold(
+        onTap: () => hideKeyBoard(),
+        child: Scaffold(
           backgroundColor: appColor.mGrey,
           appBar: CommonAppBar(
             icon: 'assets/images/ic_custom_back.png',
@@ -26,7 +26,7 @@ class _MySwitchButtonState extends State<MySwitchButton> with AppBase {
           ),
           body: _wSwitchScreen(),
         ),
-  );
+      );
 
   Widget _wSwitchScreen() => SafeArea(
         child: Container(
@@ -36,19 +36,19 @@ class _MySwitchButtonState extends State<MySwitchButton> with AppBase {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                _wSizeBox(height: 50.0),
+                const SizedBox(height: 50.0),
                 _wDefaultTitle(),
                 _wDefaultSwitch(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wCustomTitle(),
                 _wCustomSwitch(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wImageTitle(),
                 _wImageSwitch(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
                 _wAndroidIosTitle(),
                 _wAndroidIosSwitch(),
-                _wSizeBox(),
+                const SizedBox(height: 25.0),
               ],
             ),
           ),
@@ -59,10 +59,6 @@ class _MySwitchButtonState extends State<MySwitchButton> with AppBase {
         _isSwitched = value!,
         showToast(_isSwitched.toString()),
       });
-
-  Widget _wSizeBox({double height = 25.0}) => SizedBox(
-        height: height,
-      );
 
   Widget _wDefaultTitle() => const Text(
         'Default',
