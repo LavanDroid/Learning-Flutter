@@ -21,7 +21,6 @@ class _MyTextFieldState extends State<MyTextField> with AppBase {
       );
 
   Widget _wAppBar() => GestureDetector(
-        //? Hide the soft keyboard by clicking outside of TextField or anywhere on the screen
         onTap: () => hideKeyBoard(),
         child: Scaffold(
           backgroundColor: appColor.mGrey,

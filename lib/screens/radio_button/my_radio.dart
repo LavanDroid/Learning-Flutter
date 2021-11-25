@@ -26,13 +26,16 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
         child: _wAppBar(),
       );
 
-  Widget _wAppBar() => Scaffold(
-        backgroundColor: appColor.mGrey,
-        appBar: CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
-          title: 'Radio Buttons',
+  Widget _wAppBar() => GestureDetector(
+        onTap: () => hideKeyBoard(),
+        child: Scaffold(
+          backgroundColor: appColor.mGrey,
+          appBar: CommonAppBar(
+            icon: 'assets/images/ic_custom_back.png',
+            title: 'Radio Buttons',
+          ),
+          body: _wRadioButtonScreen(),
         ),
-        body: _wRadioButtonScreen(),
       );
 
   Widget _wRadioButtonScreen() => SafeArea(

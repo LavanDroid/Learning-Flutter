@@ -16,14 +16,17 @@ class _MySwitchButtonState extends State<MySwitchButton> with AppBase {
         child: _wAppBar(),
       );
 
-  Widget _wAppBar() => Scaffold(
-        backgroundColor: appColor.mGrey,
-        appBar: CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
-          title: 'Switch Buttons',
+  Widget _wAppBar() => GestureDetector(
+    onTap: () => hideKeyBoard(),
+    child: Scaffold(
+          backgroundColor: appColor.mGrey,
+          appBar: CommonAppBar(
+            icon: 'assets/images/ic_custom_back.png',
+            title: 'Switch Buttons',
+          ),
+          body: _wSwitchScreen(),
         ),
-        body: _wSwitchScreen(),
-      );
+  );
 
   Widget _wSwitchScreen() => SafeArea(
         child: Container(

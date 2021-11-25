@@ -24,16 +24,17 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         child: _wAppBar(),
       );
 
-  Widget _wAppBar() {
-    return Scaffold(
-      backgroundColor: appColor.mGrey,
-      appBar: CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
-        title: 'TextView',
-      ),
-      body: _wTextViewScreen(),
-    );
-  }
+  Widget _wAppBar() => GestureDetector(
+        onTap: () => hideKeyBoard(),
+        child: Scaffold(
+          backgroundColor: appColor.mGrey,
+          appBar: CommonAppBar(
+            icon: 'assets/images/ic_custom_back.png',
+            title: 'TextView',
+          ),
+          body: _wTextViewScreen(),
+        ),
+      );
 
   Widget _wTextViewScreen() => SafeArea(
         child: Container(

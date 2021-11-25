@@ -23,13 +23,16 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
         child: _wAppBar(),
       );
 
-  Widget _wAppBar() => Scaffold(
-        backgroundColor: appColor.mGrey,
-        appBar: CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
-          title: 'Check Box',
+  Widget _wAppBar() => GestureDetector(
+        onTap: () => hideKeyBoard(),
+        child: Scaffold(
+          backgroundColor: appColor.mGrey,
+          appBar: CommonAppBar(
+            icon: 'assets/images/ic_custom_back.png',
+            title: 'Check Box',
+          ),
+          body: _wCheckBoxScreen(),
         ),
-        body: _wCheckBoxScreen(),
       );
 
   Widget _wCheckBoxScreen() => SafeArea(

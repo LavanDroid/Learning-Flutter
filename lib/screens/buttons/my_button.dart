@@ -29,36 +29,37 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
         child: _wAppBar(),
       );
 
-  Widget _wAppBar() {
-    return Scaffold(
-      backgroundColor: appColor.mGrey,
-      appBar: CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
-        title: 'Buttons',
-        whereFrom: 'Veera',
-        menuItem: [
-          IconButton(
-            icon: const Icon(Icons.verified_user),
-            onPressed: () => showToast('Clicked Shield'),
+  Widget _wAppBar() => GestureDetector(
+        onTap: () => hideKeyBoard(),
+        child: Scaffold(
+          backgroundColor: appColor.mGrey,
+          appBar: CommonAppBar(
+            icon: 'assets/images/ic_custom_back.png',
+            title: 'Buttons',
+            whereFrom: 'Veera',
+            menuItem: [
+              IconButton(
+                icon: const Icon(Icons.verified_user),
+                onPressed: () => showToast('Clicked Shield'),
+              ),
+              ElevatedButton(
+                onPressed: () => showToast('Clicked Save'),
+                child: const Text(
+                  'Save',
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                  elevation: 0.0,
+                  primary: const Color(0xff6200ee),
+                  shape: const CircleBorder(
+                      side: BorderSide(color: Colors.transparent)),
+                ),
+              )
+            ],
           ),
-          ElevatedButton(
-            onPressed: () => showToast('Clicked Save'),
-            child: const Text(
-              'Save',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-              elevation: 0.0,
-              primary: const Color(0xff6200ee),
-              shape: const CircleBorder(
-                  side: BorderSide(color: Colors.transparent)),
-            ),
-          )
-        ],
-      ),
-      body: _wButtonScreen(),
-    );
-  }
+          body: _wButtonScreen(),
+        ),
+      );
 
   Widget _wButtonScreen() => Container(
         width: double.infinity,

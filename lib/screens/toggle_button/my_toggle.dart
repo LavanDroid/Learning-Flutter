@@ -18,13 +18,16 @@ class _MyToggleButtonState extends State<MyToggleButton> with AppBase {
         child: _wAppBar(),
       );
 
-  Widget _wAppBar() => Scaffold(
-        backgroundColor: appColor.mGrey,
-        appBar: CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
-          title: 'Toggle Buttons',
+  Widget _wAppBar() => GestureDetector(
+        onTap: () => hideKeyBoard(),
+        child: Scaffold(
+          backgroundColor: appColor.mGrey,
+          appBar: CommonAppBar(
+            icon: 'assets/images/ic_custom_back.png',
+            title: 'Toggle Buttons',
+          ),
+          body: _wToggleScreen(),
         ),
-        body: _wToggleScreen(),
       );
 
   Widget _wToggleScreen() => SafeArea(
