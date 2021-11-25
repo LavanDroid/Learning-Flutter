@@ -12,6 +12,7 @@ class MyToggleButton extends StatefulWidget {
 }
 
 class _MyToggleButtonState extends State<MyToggleButton> with AppBase {
+  bool animateFlag = false;
   @override
   Widget build(BuildContext context) => Container(
         child: _wAppBar(),
@@ -61,6 +62,9 @@ class _MyToggleButtonState extends State<MyToggleButton> with AppBase {
                 _wSizeBox(),
                 _wCustomIconTitle(),
                 _wCustomIconToggle(),
+                _wSizeBox(),
+                _wAnimateTitle(),
+                _wAnimateToggle(),
                 _wSizeBox(),
               ],
             ),
@@ -350,4 +354,65 @@ class _MyToggleButtonState extends State<MyToggleButton> with AppBase {
           showToast(index.toString());
         },
       );
+
+  Widget _wAnimateTitle() => const Text(
+        'Animated Toggle',
+        style: TextStyle(
+          fontSize: 25.0,
+          color: Colors.purpleAccent,
+        ),
+      );
+
+  Widget _wAnimateToggle() => GestureDetector(
+        onTap: clickedToggleButtons,
+        child: AnimatedContainer(
+          duration: const Duration(seconds: 1),
+          height: 40.0,
+          width: 100.0,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              color: animateFlag
+                  ? Colors.greenAccent[100]
+                  : Colors.redAccent[100]!.withOpacity(0.5)),
+          child: Stack(
+            children: <Widget>[
+              AnimatedPositioned(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeIn,
+                  top: 3.0,
+                  left: animateFlag ? 60.0 : 0.0,
+                  right: animateFlag ? 0.0 : 60.0,
+                  child: InkWell(
+                    onTap: clickedToggleButtons,
+                    child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        transitionBuilder:
+                            (Widget child, Animation<double> animation) {
+                          return ScaleTransition(
+                            child: child,
+                            scale: animation,
+                          );
+                        },
+                        child: animateFlag
+                            ? Icon(
+                                Icons.check_circle,
+                                color: Colors.green,
+                                size: 35.0,
+                                key: UniqueKey(),
+                              )
+                            : Icon(
+                                Icons.remove_circle_outline,
+                                color: Colors.red,
+                                size: 35.0,
+                                key: UniqueKey(),
+                              )),
+                  ))
+            ],
+          ),
+        ),
+      );
+
+  clickedToggleButtons() {
+    setState(() => animateFlag = !animateFlag);
+  }
 }
