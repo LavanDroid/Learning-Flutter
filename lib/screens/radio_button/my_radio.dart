@@ -38,27 +38,30 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
         ),
       );
 
-  Widget _wRadioButtonScreen() => SafeArea(
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(20.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(height: 25.0),
-                _wTextRadioButton(),
-                _wRadioGroupButton(),
-                const SizedBox(height: 25.0),
-                _wRadioListTileButton(),
-                const SizedBox(height: 25.0),
-                _wRowRadioButton(),
-                const SizedBox(height: 25.0),
-                _wListTileRadioButton(),
-                const SizedBox(height: 25.0),
-                // _wListTileRadioTileButton(),
-                // _wSizeBox(height: 50.0),
-              ],
+  Widget _wRadioButtonScreen() => GestureDetector(
+        onTap: () => hideKeyBoard(),
+        child: SafeArea(
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(20.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 25.0),
+                  _wTextRadioButton(),
+                  _wRadioGroupButton(),
+                  const SizedBox(height: 25.0),
+                  _wRadioListTileButton(),
+                  const SizedBox(height: 25.0),
+                  _wRowRadioButton(),
+                  const SizedBox(height: 25.0),
+                  _wListTileRadioButton(),
+                  const SizedBox(height: 25.0),
+                  // _wListTileRadioTileButton(),
+                  // _wSizeBox(height: 50.0),
+                ],
+              ),
             ),
           ),
         ),

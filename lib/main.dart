@@ -6,6 +6,8 @@ import 'package:flutter_demo/model/main_model.dart';
 import 'package:flutter_demo/screens/buttons/my_button.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
 import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
+import 'package:flutter_demo/screens/dialog/my_dialog.dart';
+import 'package:flutter_demo/screens/listview/my_listview.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
 import 'package:flutter_demo/screens/textfield/my_textfield.dart';
@@ -239,7 +241,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
         {
           Navigator.push(mContext,
               MaterialPageRoute(builder: (mContext) => const MyButtons()));
-          // nextAction(const MyButtons());
+          //nextAction(const MyButtons());
           break;
         }
       case 2:
@@ -252,6 +254,12 @@ class _MyDemoState extends State<MyDemo> with AppBase {
               backgroundColor: Colors.grey,
               textColor: Colors.white,
               fontSize: 18.0);
+          break;
+        }
+      case 3:
+        {
+          // Navigator.push(mContext,MaterialPageRoute(builder: (mContext) => const MyDialog()));
+          nextAction(() => const MyDialog());
           break;
         }
       case 4:
@@ -271,6 +279,11 @@ class _MyDemoState extends State<MyDemo> with AppBase {
         {
           Navigator.push(mContext,
               MaterialPageRoute(builder: (mContext) => const MyTextField()));
+          break;
+        }
+      case 7:
+        {
+          nextAction(() => const MyListView());
           break;
         }
       case 10:
@@ -304,8 +317,10 @@ class _MyDemoState extends State<MyDemo> with AppBase {
     }
   }
 
-  /* void nextAction(MyButtons screen) {
-    Navigator.push(mContext,
-              MaterialPageRoute(builder: (mContext) => const MyButtons()));
-  } */
+  void nextAction(Widget Function() pages) {
+    Navigator.push(
+      mContext,
+      MaterialPageRoute(builder: (mContext) => pages()),
+    );
+  }
 }
