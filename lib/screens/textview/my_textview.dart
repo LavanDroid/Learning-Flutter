@@ -107,7 +107,7 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         style: TextStyle(
           fontSize: 35.0,
           color: Colors.purpleAccent,
-          fontFamily: "Didoni",
+          fontFamily: "gos",
           fontWeight: FontWeight.bold,
         ),
       );
@@ -151,7 +151,7 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
           color: Colors.black,
         ),
         trimCollapsedText: 'Show more',
-        trimExpandedText: ' show less',
+        trimExpandedText: ' Show less',
       );
 
   Widget _wRichText() => RichText(

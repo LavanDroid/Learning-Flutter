@@ -146,7 +146,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
                               title: Text(item.name),
                               trailing: const Icon(Icons.keyboard_arrow_right),
                               onTap: () {
-                                showSnake(context, item.name, idx);
+                                //showSnake(context, item.name, idx);
                                 checkNextAction(item);
                               },
                             ),
