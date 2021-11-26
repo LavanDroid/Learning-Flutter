@@ -8,6 +8,7 @@ import 'package:flutter_demo/screens/check_box/my_check_box.dart';
 import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
 import 'package:flutter_demo/screens/dialog/my_dialog.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
+import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
 import 'package:flutter_demo/screens/textfield/my_textfield.dart';
@@ -220,6 +221,11 @@ class _MyDemoState extends State<MyDemo> with AppBase {
           nextAction(() => const MyListView());
           break;
         }
+      case 9:
+        {
+          nextAction(() => const MyPopupMenu());
+          break;
+        }
       case 10:
         {
           Navigator.push(mContext,
@@ -246,7 +252,9 @@ class _MyDemoState extends State<MyDemo> with AppBase {
         }
       default:
         {
-          appPrint("Yet to create $item.name screen");
+          appPrint(
+            'Yet to create ' + item.name + ' & ID-> ' + item.id.toString(),
+          );
         }
     }
   }

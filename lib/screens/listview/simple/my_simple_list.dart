@@ -35,21 +35,23 @@ class MySimpleList extends StatelessWidget {
             title: Text("Card Item"),
           ),
           Card(
+              elevation: 8.0,
               child: ListTile(
-            title: const Text("Alarm"),
-            subtitle: const Text("This is the time."),
-            leading: const Icon(Icons.access_alarm),
-            trailing: const Icon(Icons.star),
-            onTap: () => appBase.showToast('Alarm'),
-          )),
+                title: const Text("Alarm"),
+                subtitle: const Text("This is the time."),
+                leading: const Icon(Icons.access_alarm),
+                trailing: const Icon(Icons.star),
+                onTap: () => appBase.showToast('Alarm'),
+              )),
           Card(
+              elevation: 8.0,
               child: ListTile(
-            title: const Text("Ballot"),
-            subtitle: const Text("Cast your vote."),
-            leading: const Icon(Icons.ballot),
-            trailing: const Icon(Icons.star),
-            onTap: () => appBase.showToast('Ballot'),
-          )),
+                title: const Text("Ballot"),
+                subtitle: const Text("Cast your vote."),
+                leading: const Icon(Icons.ballot),
+                trailing: const Icon(Icons.star),
+                onTap: () => appBase.showToast('Ballot'),
+              )),
         ],
       );
 }

@@ -20,11 +20,14 @@ class _MySeparatedState extends State<MySeparated> with AppBase {
   }
 
   Widget buildListView() => ListView.separated(
-      separatorBuilder: (BuildContext context, int index) => const Divider(),
+      separatorBuilder: (BuildContext context, int index) => const Divider(
+            color: Colors.pink,
+          ),
       itemCount: mListView.length,
       itemBuilder: (context, idx) {
         final item = mListView[idx];
         return Card(
+          elevation: 8.0,
           child: ListTile(
             title: Text(item.name),
             subtitle: Text(item.subTitle ?? ''),
