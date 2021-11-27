@@ -31,7 +31,7 @@ class CatalogModel {
       id: 5,
     ),
     MainModel(
-      name: "Text Feild (Edittext)",
+      name: "Text Field (Edittext)",
       id: 6,
     ),
     MainModel(

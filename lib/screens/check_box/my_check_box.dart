@@ -27,7 +27,7 @@ class _MyCheckBoxState extends State<MyCheckBox> with AppBase {
         onTap: () => hideKeyBoard(),
         child: Scaffold(
           backgroundColor: appColor.mGrey,
-          appBar: CommonAppBar(
+          appBar: const CommonAppBar(
             icon: 'assets/images/ic_custom_back.png',
             title: 'Check Box',
           ),

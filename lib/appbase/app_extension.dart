@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/api_constants.dart';
+import 'package:flutter_demo/appbase/app_constants.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class AppPrint {
   call(dynamic msg) {
-    if (!ApiConstants.inProduction) {
-      //print('Veera : $msg -> ' + (ApiConstants.inProduction.toString()));
+    if (!AppConstants.inProduction) {
+      //print('Veera : $msg -> ' + (AppConstants.inProduction.toString()));
       print('$msg');
     }
   }

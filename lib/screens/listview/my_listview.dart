@@ -21,7 +21,7 @@ class _MyListViewState extends State<MyListView> with AppBase {
 
   Widget buildAppBar() => Scaffold(
         backgroundColor: appColor.mGrey,
-        appBar: CommonAppBar(
+        appBar: const CommonAppBar(
           icon: 'assets/images/ic_custom_back.png',
           title: 'ListView',
         ),

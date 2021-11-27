@@ -8,12 +8,13 @@ class MyRadioOption<T> extends StatelessWidget {
   final ValueChanged<T?> onChanged;
 
   const MyRadioOption({
+    Key? key,
     required this.value,
     required this.groupValue,
     required this.label,
     required this.text,
     required this.onChanged,
-  });
+  }) : super(key: key);
 
   Widget _buildLabel() {
     final bool isSelected = value == groupValue;

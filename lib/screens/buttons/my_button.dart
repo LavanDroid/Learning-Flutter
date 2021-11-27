@@ -5,7 +5,12 @@ import 'package:flutter_demo/screens/buttons/outline_gradient_button.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
 class MyButtons extends StatefulWidget {
-  const MyButtons({Key? key}) : super(key: key);
+  final String data;
+
+  const MyButtons({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
   //static const String routeName = '/MyButtons';
 
   /*
@@ -69,6 +74,8 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 50.0),
+              buildText(),
+              const SizedBox(height: 25.0),
               _wTextElevateButton(),
               const SizedBox(height: 25.0),
               _wElevateButtonOne(),
@@ -610,6 +617,13 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
           onLongPress: () => showToast('onLongPress'),
         ),
       ];
+
+  Widget buildText() {
+    return Text(
+      widget.data,
+      style: const TextStyle(color: Colors.black, fontSize: 24),
+    );
+  }
 
   /* void showSnack(String text) {
     _rootScaffoldMessengerKey.currentState?.removeCurrentSnackBar();

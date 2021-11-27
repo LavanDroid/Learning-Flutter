@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_extension.dart';
+//import 'package:flutter_demo/appbase/app_extension.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   //const BaseAppBar({Key? key}) : super(key: key);
@@ -11,9 +11,9 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? menuItem;
   final bool hideBack;
   final String? whereFrom;
-  var appPrint = AppPrint();
+  //var appPrint = AppPrint();
 
-  CommonAppBar({
+  const CommonAppBar({
     Key? key,
     this.bgColor = const Color(0xff6200ee),
     this.textIconColor = Colors.white,

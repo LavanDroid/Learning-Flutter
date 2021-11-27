@@ -7,7 +7,7 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: CommonAppBar(
         icon: 'assets/images/ic_custom_back.png',
         title: "My Custom AppBar",
