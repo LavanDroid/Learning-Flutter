@@ -5,6 +5,7 @@ import 'package:flutter_demo/screens/buttons/my_button.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
 import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
 import 'package:flutter_demo/screens/dialog/my_dialog.dart';
+import 'package:flutter_demo/screens/dropdown/my_dropdown.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
 import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
@@ -79,6 +80,11 @@ class RouteGenerator {
           builder: (_) => const MyListView(),
         );
 
+      case AppConstants.dropdown:
+        return MaterialPageRoute(
+          builder: (_) => const MyDropDown(),
+        );
+
       case AppConstants.popupMenu:
         return MaterialPageRoute(
           builder: (_) => const MyPopupMenu(),
@@ -123,7 +129,7 @@ class RouteGenerator {
             title: const Text('Error'),
           ),
           body: const Center(
-            child: Text('ERROR'),
+            child: Text('ERROR ROUTE'),
           ),
         );
       },

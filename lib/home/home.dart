@@ -3,17 +3,6 @@ import 'package:flutter_demo/appbase/app_base.dart';
 import 'package:flutter_demo/appbase/app_constants.dart';
 import 'package:flutter_demo/appbase/app_string.dart';
 import 'package:flutter_demo/model/main_model.dart';
-import 'package:flutter_demo/screens/buttons/my_button.dart';
-import 'package:flutter_demo/screens/check_box/my_check_box.dart';
-import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
-import 'package:flutter_demo/screens/dialog/my_dialog.dart';
-import 'package:flutter_demo/screens/listview/my_listview.dart';
-import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
-import 'package:flutter_demo/screens/radio_button/my_radio.dart';
-import 'package:flutter_demo/screens/switch_button/my_switch.dart';
-import 'package:flutter_demo/screens/textfield/my_textfield.dart';
-import 'package:flutter_demo/screens/textview/my_textview.dart';
-import 'package:flutter_demo/screens/toggle_button/my_toggle.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Home extends StatefulWidget {
@@ -185,6 +174,11 @@ class _HomeState extends State<Home> with AppBase {
       case 7: //ListView
         {
           nextAction(mContext, AppConstants.listview);
+          break;
+        }
+      case 8: //Dropdowm
+        {
+          nextAction(mContext, AppConstants.dropdown);
           break;
         }
       case 9: //Popup Menu

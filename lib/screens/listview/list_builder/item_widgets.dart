@@ -14,7 +14,15 @@ class MyItemWidget extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           // backgroundImage: AssetImage(images[index]),
-          backgroundImage: NetworkImage(item.img),
+          // backgroundImage: NetworkImage(item.img),
+          child: ClipOval(
+            child: Image.network(
+              item.img,
+              width: 45.0,
+              height: 45.0,
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         title: Text(item.name),
         subtitle: const Text('This is subtitle'),
