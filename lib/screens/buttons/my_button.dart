@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
-import 'package:flutter_demo/screens/buttons/outline_gradient_button.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+
+import 'outline_gradient_button.dart';
 
 class MyButtons extends StatefulWidget {
   final String data;

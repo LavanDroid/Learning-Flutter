@@ -11,56 +11,60 @@ class MainModel {
 class CatalogModel {
   static final items = [
     MainModel(
-      name: "Button",
+      name: 'Button',
       id: 1,
     ),
     MainModel(
-      name: "Toast",
+      name: 'Toast',
       id: 2,
     ),
     MainModel(
-      name: "Dialog",
+      name: 'Dialog',
       id: 3,
     ),
     MainModel(
-      name: "AppBar",
+      name: 'AppBar',
       id: 4,
     ),
     MainModel(
-      name: "Textview",
+      name: 'Textview',
       id: 5,
     ),
     MainModel(
-      name: "Text Field (Edittext)",
+      name: 'Text Field (Edittext)',
       id: 6,
     ),
     MainModel(
-      name: "ListView",
+      name: 'ListView',
       id: 7,
     ),
     MainModel(
-      name: "DropDown",
+      name: 'DropDown',
       id: 8,
     ),
     MainModel(
-      name: "PopMenu",
+      name: 'PopMenu',
       id: 9,
     ),
     MainModel(
-      name: "Button Radio",
+      name: 'Button Radio',
       id: 10,
     ),
     MainModel(
-      name: "Button Switch",
+      name: 'Button Switch',
       id: 11,
     ),
     MainModel(
-      name: "Button Toggle",
+      name: 'Button Toggle',
       id: 12,
     ),
     MainModel(
-      name: "Check Box",
+      name: 'Check Box',
       id: 13,
+    ),
+    MainModel(
+      name: 'Expansion Tile',
+      id: 14,
     ),
   ];
 }

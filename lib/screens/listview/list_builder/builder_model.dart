@@ -15,6 +15,88 @@ class BuilderList {
     BuilderModel(
       name: 'Button',
       id: 1,
+      img: 'https://picsum.photos/250?image=24',
+    ),
+    BuilderModel(
+      name: "Toast",
+      id: 2,
+      img: 'https://picsum.photos/250?image=23',
+    ),
+    BuilderModel(
+      name: "Dialog",
+      id: 3,
+      img: 'https://picsum.photos/250?image=22',
+    ),
+    BuilderModel(
+      name: "AppBar",
+      id: 4,
+      img: 'https://picsum.photos/250?image=21',
+    ),
+    BuilderModel(
+      name: "Textview",
+      id: 5,
+      img: 'https://picsum.photos/250?image=20',
+    ),
+    BuilderModel(
+      name: "Text Feild (Edittext)",
+      id: 6,
+      img: 'https://picsum.photos/250?image=16',
+    ),
+    BuilderModel(
+      name: "ListView",
+      id: 7,
+      img: 'https://picsum.photos/250?image=17',
+    ),
+    BuilderModel(
+      name: "DropDown",
+      id: 8,
+      img: 'https://picsum.photos/250?image=18',
+    ),
+    BuilderModel(
+      name: "PopMenu",
+      id: 9,
+      img: 'https://picsum.photos/250?image=19',
+    ),
+    BuilderModel(
+      name: "Button Radio",
+      id: 10,
+      img: 'https://picsum.photos/250?image=10',
+    ),
+    BuilderModel(
+      name: "Button Switch",
+      id: 11,
+      img: 'https://picsum.photos/250?image=11',
+    ),
+    BuilderModel(
+      name: "Button Toggle",
+      id: 12,
+      img: 'https://picsum.photos/250?image=12',
+    ),
+    BuilderModel(
+      name: "Check Box",
+      id: 13,
+      img: 'https://picsum.photos/250?image=13',
+    ),
+    BuilderModel(
+      name: 'Button',
+      id: 14,
+      img: 'https://picsum.photos/250?image=14',
+    ),
+    BuilderModel(
+      name: "Toast",
+      id: 15,
+      img: 'https://picsum.photos/250?image=15',
+    ),
+  ];
+}
+
+/* 
+
+class BuilderList {
+  static final items = [
+    BuilderModel(
+      name: 'Button',
+      id: 1,
       img: 'http://lorempixel.com/200/200/animals/1/',
     ),
     BuilderModel(
@@ -89,8 +171,6 @@ class BuilderList {
     ),
   ];
 }
-
-/* 
 
 BuilderModel(
       name: "Dialog",

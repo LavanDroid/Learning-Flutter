@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_constants.dart';
+import 'package:flutter_demo/constants/app_constants.dart';
 import 'package:flutter_demo/home/home.dart';
 import 'package:flutter_demo/screens/buttons/my_button.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
 import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
 import 'package:flutter_demo/screens/dialog/my_dialog.dart';
 import 'package:flutter_demo/screens/dropdown/my_dropdown.dart';
+import 'package:flutter_demo/screens/expansion_tile/expansion_tile.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
 import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
@@ -98,6 +99,11 @@ class RouteGenerator {
       case AppConstants.textview:
         return MaterialPageRoute(
           builder: (_) => const MyTextView(),
+        );
+
+      case AppConstants.expansionTile:
+        return MaterialPageRoute(
+          builder: (_) => const MyExpansionTile(),
         );
 
       default:

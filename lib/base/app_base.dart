@@ -1,5 +1,6 @@
-import 'package:flutter_demo/appbase/app_colors.dart';
-import 'package:flutter_demo/appbase/app_extension.dart';
+
+import 'app_colors.dart';
+import 'app_extension.dart';
 
 class AppBase {
   late var appPrint = AppPrint();

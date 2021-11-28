@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
-import 'package:flutter_demo/screens/textfield/textfield_border.dart';
-import 'package:flutter_demo/screens/textfield/textfield_focus.dart';
-import 'package:flutter_demo/screens/textfield/textfield_general.dart';
+
+import 'textfield_border.dart';
+import 'textfield_focus.dart';
+import 'textfield_general.dart';
 
 class MyTextField extends StatefulWidget {
   const MyTextField({Key? key}) : super(key: key);

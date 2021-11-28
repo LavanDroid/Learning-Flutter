@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
-import 'package:flutter_demo/appbase/app_constants.dart';
-import 'package:flutter_demo/home/route_generator.dart';
+
+import 'base/app_base.dart';
+import 'constants/app_constants.dart';
+import 'routes/route_generator.dart';
 
 void main() {
   // runApp(const MyApp());

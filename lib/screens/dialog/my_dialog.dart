@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
-import 'package:flutter_demo/screens/dialog/custom_dialog_box.dart';
+
+import 'custom_dialog_box.dart';
 
 class MyDialog extends StatefulWidget {
   const MyDialog({Key? key}) : super(key: key);
@@ -93,7 +94,7 @@ class _MyDialogState extends State<MyDialog> with AppBase {
                   Navigator.of(context).pop(),
                 },
                 onNoPressed: () => {
-                 // Navigator.of(context).pop(),
+                  // Navigator.of(context).pop(),
                 },
               ),
             ),

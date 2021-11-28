@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
-import 'package:flutter_demo/screens/listview/list_builder/my_list_builder.dart';
-import 'package:flutter_demo/screens/listview/separated/my_separated.dart';
-import 'package:flutter_demo/screens/listview/simple/my_simple_list.dart';
+
+import 'list_builder/my_list_builder.dart';
+import 'separated/my_separated.dart';
+import 'simple/my_simple_list.dart';
 
 class MyListView extends StatefulWidget {
   const MyListView({Key? key}) : super(key: key);

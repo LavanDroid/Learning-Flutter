@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
-import 'package:flutter_demo/screens/listview/list_builder/builder_model.dart';
-import 'package:flutter_demo/screens/listview/list_builder/item_widgets.dart';
+import 'package:flutter_demo/base/app_base.dart';
+
+import 'builder_model.dart';
+import 'item_widgets.dart';
 
 class MyListBuilder extends StatefulWidget {
   const MyListBuilder({Key? key}) : super(key: key);

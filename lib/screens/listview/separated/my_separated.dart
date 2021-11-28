@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
-import 'package:flutter_demo/screens/listview/separated/separated_model.dart';
+import 'package:flutter_demo/base/app_base.dart';
+
+import 'separated_model.dart';
 
 class MySeparated extends StatefulWidget {
   const MySeparated({Key? key}) : super(key: key);
@@ -31,11 +32,12 @@ class _MySeparatedState extends State<MySeparated> with AppBase {
           child: ListTile(
             title: Text(item.name),
             subtitle: Text(item.subTitle ?? ''),
-            leading: const CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "https://images.unsplash.com/photo-1547721064-da6cfb341d50"),
+            leading: CircleAvatar(
+              /* backgroundImage: NetworkImage(
+                  "https://images.unsplash.com/photo-1547721064-da6cfb341d50"), */
+              backgroundImage: NetworkImage(item.img ?? ''),
             ),
-            trailing: Icon(item.img),
+            trailing: Icon(item.ic),
             onTap: () => showToast(item.name),
           ),
         );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 
 class MySimpleList extends StatelessWidget {
   const MySimpleList({Key? key}) : super(key: key);

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
-import 'package:flutter_demo/screens/toggle_button/toggle_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'toggle_switch.dart';
 
 class MyToggleButton extends StatefulWidget {
   const MyToggleButton({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_constants.dart';
+import 'package:flutter_demo/constants/app_constants.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class AppPrint {

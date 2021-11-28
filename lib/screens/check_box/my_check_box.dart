@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/model/check_box_model.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 

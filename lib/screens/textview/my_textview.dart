@@ -1,12 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
-import 'package:flutter_demo/screens/textview/gradient_text.dart';
-import 'package:flutter_demo/screens/textview/marquee_widget.dart';
-import 'package:flutter_demo/screens/textview/readmore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui' as ui;
+
+import 'gradient_text.dart';
+import 'marquee_widget.dart';
+import 'readmore.dart';
 
 class MyTextView extends StatefulWidget {
   const MyTextView({Key? key}) : super(key: key);

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/appbase/app_base.dart';
+import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
-import 'package:flutter_demo/screens/radio_button/radio_button.dart';
+
+import 'radio_button.dart';
 
 class MyRadioButton extends StatefulWidget {
   const MyRadioButton({Key? key}) : super(key: key);
