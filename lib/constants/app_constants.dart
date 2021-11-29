@@ -1,8 +1,8 @@
 class AppConstants {
   static const bool inProduction = bool.fromEnvironment('dart.vm.product');
 
-  //? Class Route
-  static const String home = '/';
+  //! Class Route !//
+  static const String home = '/'; //? Default set like this
   static const String appBar = '/appbar';
   static const String button = '/button';
   static const String radioButton = '/radio_button';
@@ -17,4 +17,8 @@ class AppConstants {
   static const String textview = '/textview';
   static const String expansionTile = '/expansion_tile';
   // static const String toast = '/toast';
+
+  //! Api path !//
+  static const String apiGetBookPath =
+      'https://gist.githubusercontent.com/JohannesMilke/d53fbbe9a1b7e7ca2645db13b995dc6f/raw/eace0e20f86cdde3352b2d92f699b6e9dedd8c70/books.json';
 }

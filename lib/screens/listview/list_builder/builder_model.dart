@@ -90,9 +90,7 @@ class BuilderList {
   ];
 }
 
-/* 
-
-class BuilderList {
+/* class BuilderList {
   static final items = [
     BuilderModel(
       name: 'Button',
@@ -170,8 +168,8 @@ class BuilderList {
       img: 'http://lorempixel.com/200/200/sports/5/',
     ),
   ];
-}
-
+} */
+/* 
 BuilderModel(
       name: "Dialog",
       id: 16,
@@ -196,5 +194,4 @@ BuilderModel(
       name: "ListView",
       id: 20,
       img: 'http://lorempixel.com/200/200/food/7/',
-    ),
- */
+    ), */

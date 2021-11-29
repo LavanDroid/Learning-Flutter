@@ -11,6 +11,12 @@ class AppPrint {
       print('$msg');
     }
   }
+
+  static void getStaticPrint(dynamic e) {
+    if (!AppConstants.inProduction) {
+        print('Api getBooks: $e');
+      }
+  }
 }
 
 class ShowToast {

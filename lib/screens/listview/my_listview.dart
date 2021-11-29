@@ -3,6 +3,7 @@ import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
 import 'list_builder/my_list_builder.dart';
+import 'search/my_search_list.dart';
 import 'separated/my_separated.dart';
 import 'simple/my_simple_list.dart';
 
@@ -14,9 +15,15 @@ class MyListView extends StatefulWidget {
 }
 
 class _MyListViewState extends State<MyListView> with AppBase {
+  /* final mTabScreen = [
+    const MySimpleList(),
+    const MyListBuilder(),
+    const MySeparated(),
+    const MySearchList()
+  ]; */
   @override
   Widget build(BuildContext context) => DefaultTabController(
-        length: 3,
+        length: 4,
         child: buildAppBar(),
       );
 
@@ -35,7 +42,13 @@ class _MyListViewState extends State<MyListView> with AppBase {
           body: GestureDetector(
             onTap: () => hideKeyBoard(),
             child: const TabBarView(
-              children: [MySimpleList(), MyListBuilder(), MySeparated()],
+              children: [
+                MySimpleList(),
+                MyListBuilder(),
+                MySeparated(),
+                MySearchList()
+                // ...mTabScreen.map(Widget widget){}.toList(),
+              ],
             ),
           ),
         ),
@@ -63,6 +76,9 @@ class _MyListViewState extends State<MyListView> with AppBase {
           ),
           Tab(
             text: 'Separated',
+          ),
+          Tab(
+            text: 'Search',
           ),
         ],
       ),
