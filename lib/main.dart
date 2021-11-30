@@ -41,8 +41,8 @@ class _MyDemoState extends State<MyDemo> with AppBase {
     return const MaterialApp(
       title: 'Veera Flutter',
       //debugShowCheckedModeBanner: false,
-      initialRoute: AppConstants.home,
       onGenerateRoute: RouteGenerator.generateRoute,
+      initialRoute: AppConstants.spalsh,
     );
   }
 }

@@ -2,7 +2,8 @@ class AppConstants {
   static const bool inProduction = bool.fromEnvironment('dart.vm.product');
 
   //! Class Route !//
-  static const String home = '/'; //? Default set like this
+  static const String spalsh = '/'; //? Default set like this
+  static const String home = '/home';
   static const String appBar = '/appbar';
   static const String button = '/button';
   static const String radioButton = '/radio_button';

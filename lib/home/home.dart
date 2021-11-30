@@ -135,7 +135,7 @@ class _HomeState extends State<Home> with AppBase {
     switch (item.id) {
       case 1: //Button
         {
-          nextAction(mContext, AppConstants.button,
+           navigateTo(mContext, AppConstants.button,
               data: 'Data from home \u265A');
           break;
         }
@@ -145,7 +145,7 @@ class _HomeState extends State<Home> with AppBase {
               msg: "This is my toast",
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.CENTER,
-              timeInSecForIosWeb: 1,
+              //timeInSecForIosWeb: 1,
               backgroundColor: Colors.grey,
               textColor: Colors.white,
               fontSize: 18.0);
@@ -153,62 +153,62 @@ class _HomeState extends State<Home> with AppBase {
         }
       case 3: // Dialog
         {
-          nextAction(mContext, AppConstants.dialog);
+           navigateTo(mContext, AppConstants.dialog);
           break;
         }
       case 4: //AppBar
         {
-          nextAction(mContext, AppConstants.appBar);
+           navigateTo(mContext, AppConstants.appBar);
           break;
         }
       case 5: //TextView
         {
-          nextAction(mContext, AppConstants.textview);
+           navigateTo(mContext, AppConstants.textview);
           break;
         }
       case 6: //TextField
         {
-          nextAction(mContext, AppConstants.textField);
+           navigateTo(mContext, AppConstants.textField);
           break;
         }
       case 7: //ListView
         {
-          nextAction(mContext, AppConstants.listview);
+           navigateTo(mContext, AppConstants.listview);
           break;
         }
       case 8: //Dropdowm
         {
-          nextAction(mContext, AppConstants.dropdown);
+           navigateTo(mContext, AppConstants.dropdown);
           break;
         }
       case 9: //Popup Menu
         {
-          nextAction(mContext, AppConstants.popupMenu);
+           navigateTo(mContext, AppConstants.popupMenu);
           break;
         }
       case 10: //Radio Button
         {
-          nextAction(mContext, AppConstants.radioButton);
+           navigateTo(mContext, AppConstants.radioButton);
           break;
         }
       case 11: //Switch Button
         {
-          nextAction(mContext, AppConstants.switchButton);
+           navigateTo(mContext, AppConstants.switchButton);
           break;
         }
       case 12: //Toggle Button
         {
-          nextAction(mContext, AppConstants.toggleButton);
+           navigateTo(mContext, AppConstants.toggleButton);
           break;
         }
       case 13: // Check Box
         {
-          nextAction(mContext, AppConstants.checkBox);
+           navigateTo(mContext, AppConstants.checkBox);
           break;
         }
         case 14: // Check Box
         {
-          nextAction(mContext, AppConstants.expansionTile);
+           navigateTo(mContext, AppConstants.expansionTile);
           break;
         }
       default:
@@ -228,11 +228,11 @@ class _HomeState extends State<Home> with AppBase {
       ),
     );
   } */
-  void nextAction(BuildContext mContext, String routePage, {String data = ''}) {
+  /* void nextAction(BuildContext mContext, String routePage, {String data = ''}) {
     if (data.isNotEmpty) {
       Navigator.pushNamed(mContext, routePage, arguments: data);
     } else {
       Navigator.pushNamed(mContext, routePage);
     }
-  }
+  } */
 }
