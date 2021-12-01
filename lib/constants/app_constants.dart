@@ -17,6 +17,7 @@ class AppConstants {
   static const String textField = '/text_field';
   static const String textview = '/textview';
   static const String expansionTile = '/expansion_tile';
+  static const String slider = '/slider';
   // static const String toast = '/toast';
 
   //! Api path !//

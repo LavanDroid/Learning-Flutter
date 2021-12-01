@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
 import 'Api/books_api.dart';
 import 'Widget/search_widget.dart';

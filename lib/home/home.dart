@@ -135,7 +135,7 @@ class _HomeState extends State<Home> with AppBase {
     switch (item.id) {
       case 1: //Button
         {
-           navigateTo(mContext, AppConstants.button,
+          navigateTo(mContext, AppConstants.button,
               data: 'Data from home \u265A');
           break;
         }
@@ -153,62 +153,67 @@ class _HomeState extends State<Home> with AppBase {
         }
       case 3: // Dialog
         {
-           navigateTo(mContext, AppConstants.dialog);
+          navigateTo(mContext, AppConstants.dialog);
           break;
         }
       case 4: //AppBar
         {
-           navigateTo(mContext, AppConstants.appBar);
+          navigateTo(mContext, AppConstants.appBar);
           break;
         }
       case 5: //TextView
         {
-           navigateTo(mContext, AppConstants.textview);
+          navigateTo(mContext, AppConstants.textview);
           break;
         }
       case 6: //TextField
         {
-           navigateTo(mContext, AppConstants.textField);
+          navigateTo(mContext, AppConstants.textField);
           break;
         }
       case 7: //ListView
         {
-           navigateTo(mContext, AppConstants.listview);
+          navigateTo(mContext, AppConstants.listview);
           break;
         }
       case 8: //Dropdowm
         {
-           navigateTo(mContext, AppConstants.dropdown);
+          navigateTo(mContext, AppConstants.dropdown);
           break;
         }
       case 9: //Popup Menu
         {
-           navigateTo(mContext, AppConstants.popupMenu);
+          navigateTo(mContext, AppConstants.popupMenu);
           break;
         }
       case 10: //Radio Button
         {
-           navigateTo(mContext, AppConstants.radioButton);
+          navigateTo(mContext, AppConstants.radioButton);
           break;
         }
       case 11: //Switch Button
         {
-           navigateTo(mContext, AppConstants.switchButton);
+          navigateTo(mContext, AppConstants.switchButton);
           break;
         }
       case 12: //Toggle Button
         {
-           navigateTo(mContext, AppConstants.toggleButton);
+          navigateTo(mContext, AppConstants.toggleButton);
           break;
         }
       case 13: // Check Box
         {
-           navigateTo(mContext, AppConstants.checkBox);
+          navigateTo(mContext, AppConstants.checkBox);
           break;
         }
-        case 14: // Check Box
+      case 14: // Expansion Tile
         {
-           navigateTo(mContext, AppConstants.expansionTile);
+          navigateTo(mContext, AppConstants.expansionTile);
+          break;
+        }
+      case 15: // Slider (SeekBar)
+        {
+          navigateTo(mContext, AppConstants.slider);
           break;
         }
       default:

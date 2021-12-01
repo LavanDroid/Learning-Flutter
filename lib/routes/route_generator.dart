@@ -10,6 +10,7 @@ import 'package:flutter_demo/screens/expansion_tile/expansion_tile.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
 import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
+import 'package:flutter_demo/screens/slider/my_slider.dart';
 import 'package:flutter_demo/screens/splash/splash.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
 import 'package:flutter_demo/screens/textfield/my_textfield.dart';
@@ -110,6 +111,11 @@ class RouteGenerator {
       case AppConstants.expansionTile:
         return MaterialPageRoute(
           builder: (_) => const MyExpansionTile(),
+        );
+
+        case AppConstants.slider:
+        return MaterialPageRoute(
+          builder: (_) => const MySlider(),
         );
 
       default:

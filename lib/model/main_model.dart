@@ -66,5 +66,9 @@ class CatalogModel {
       name: 'Expansion Tile',
       id: 14,
     ),
+    MainModel(
+      name: 'Slider (SeekBar)',
+      id: 15,
+    ),
   ];
 }
