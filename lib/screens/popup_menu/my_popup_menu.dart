@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
+import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
 class MyPopupMenu extends StatefulWidget {
@@ -31,9 +33,9 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
   Widget _wAppBar() => GestureDetector(
         onTap: () => hideKeyBoard(),
         child: Scaffold(
-          backgroundColor: appColor.mGrey,
+          backgroundColor: AppColors.grey,
           appBar: const CommonAppBar(
-            icon: 'assets/images/ic_custom_back.png',
+            icon: AppImages.icCustomBack,
             title: 'Popup Menu',
           ),
           body: buildPopMenuScreen(),
@@ -75,7 +77,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
       );
 
   Widget buildDefault() => CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
+        icon: AppImages.icCustomBack,
         title: 'Default',
         hideBack: true,
         menuItem: [
@@ -99,7 +101,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
       );
 
   Widget buildName() => CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
+        icon: AppImages.icCustomBack,
         title: 'Name',
         hideBack: true,
         menuItem: [
@@ -126,7 +128,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
       );
 
   Widget buildHorizIcon() => CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
+          icon: AppImages.icCustomBack,
           title: 'Horizontal icon',
           hideBack: true,
           menuItem: [
@@ -137,7 +139,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
           ]);
 
   Widget buildVertIcon() => CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
+          icon: AppImages.icCustomBack,
           title: 'Vertical icon',
           hideBack: true,
           menuItem: [
@@ -148,7 +150,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
           ]);
 
   Widget buildColorBorder() => CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
+        icon: AppImages.icCustomBack,
         title: 'Color & Border',
         hideBack: true,
         menuItem: [
@@ -181,7 +183,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
 
   //! Big name can't use this style
   Widget buildCircle() => CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
+        icon: AppImages.icCustomBack,
         title: 'Circle',
         hideBack: true,
         menuItem: [
@@ -206,7 +208,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
       );
 
   Widget buildList() => CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
+        icon: AppImages.icCustomBack,
         title: 'List item',
         hideBack: true,
         menuItem: [
@@ -234,7 +236,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
       );
 
   Widget buildTextIcon() => CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
+        icon: AppImages.icCustomBack,
         title: 'Text icon',
         hideBack: true,
         menuItem: [

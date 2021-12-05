@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  Color mBlue = const Color(0xff001bff);
-  Color mYellow = const Color(0xffffff00);
-  Color mGrey = const Color(0xfff0f0f0);
+  static const Color blue = Color(0xff001bff);
+  static const Color yellow = Color(0xffffff00);
+  static const Color grey = Color(0xfff0f0f0);
 
   // ? If you wish to use ARGB format
   // Color color1 = HexColor("#ff0fff");

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/constants/app_image.dart';
 
 class CustomDialogBox extends StatefulWidget {
   final String title, descriptions, textYes, textNo;
@@ -101,7 +102,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             radius: 45.0,
             child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(45.0)),
-                child: Image.asset('assets/images/model.png')),
+                child: Image.asset(AppImages.icModel)),
           ),
         ),
       ],

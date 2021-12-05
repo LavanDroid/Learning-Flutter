@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
 import 'radio_button.dart';
@@ -30,7 +31,7 @@ class _MyRadioButtonState extends State<MyRadioButton> with AppBase {
   Widget _wAppBar() => GestureDetector(
         onTap: () => hideKeyBoard(),
         child: Scaffold(
-          backgroundColor: appColor.mGrey,
+          backgroundColor: AppColors.grey,
           appBar: const CommonAppBar(
             icon: 'assets/images/ic_custom_back.png',
             title: 'Radio Buttons',

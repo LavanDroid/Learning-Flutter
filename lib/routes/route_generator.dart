@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants/app_constants.dart';
+import 'package:flutter_demo/constants/app_route.dart';
 import 'package:flutter_demo/home/home.dart';
 import 'package:flutter_demo/screens/buttons/my_button.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
@@ -29,22 +30,22 @@ class RouteGenerator {
     }
 
     switch (settings.name) {
-      case AppConstants.spalsh:
+      case AppRoutes.spalsh:
         return MaterialPageRoute(
           builder: (_) => const SplashScreen(),
         );
 
-      case AppConstants.home:
+      case AppRoutes.home:
         return MaterialPageRoute(
           builder: (_) => const Home(),
         );
 
-      case AppConstants.appBar:
+      case AppRoutes.appBar:
         return MaterialPageRoute(
           builder: (_) => const MyAppBar(),
         );
 
-      case AppConstants.button:
+      case AppRoutes.button:
         /* if (args is String) {
           return MaterialPageRoute(
             builder: (_) => MyButtons(
@@ -58,62 +59,62 @@ class RouteGenerator {
           ),
         );
 
-      case AppConstants.radioButton:
+      case AppRoutes.radioButton:
         return MaterialPageRoute(
           builder: (_) => const MyRadioButton(),
         );
 
-      case AppConstants.switchButton:
+      case AppRoutes.switchButton:
         return MaterialPageRoute(
           builder: (_) => const MySwitchButton(),
         );
 
-      case AppConstants.toggleButton:
+      case AppRoutes.toggleButton:
         return MaterialPageRoute(
           builder: (_) => const MyToggleButton(),
         );
 
-      case AppConstants.checkBox:
+      case AppRoutes.checkBox:
         return MaterialPageRoute(
           builder: (_) => const MyCheckBox(),
         );
 
-      case AppConstants.dialog:
+      case AppRoutes.dialog:
         return MaterialPageRoute(
           builder: (_) => const MyDialog(),
         );
 
-      case AppConstants.listview:
+      case AppRoutes.listview:
         return MaterialPageRoute(
           builder: (_) => const MyListView(),
         );
 
-      case AppConstants.dropdown:
+      case AppRoutes.dropdown:
         return MaterialPageRoute(
           builder: (_) => const MyDropDown(),
         );
 
-      case AppConstants.popupMenu:
+      case AppRoutes.popupMenu:
         return MaterialPageRoute(
           builder: (_) => const MyPopupMenu(),
         );
 
-      case AppConstants.textField:
+      case AppRoutes.textField:
         return MaterialPageRoute(
           builder: (_) => const MyTextField(),
         );
 
-      case AppConstants.textview:
+      case AppRoutes.textview:
         return MaterialPageRoute(
           builder: (_) => const MyTextView(),
         );
 
-      case AppConstants.expansionTile:
+      case AppRoutes.expansionTile:
         return MaterialPageRoute(
           builder: (_) => const MyExpansionTile(),
         );
 
-        case AppConstants.slider:
+        case AppRoutes.slider:
         return MaterialPageRoute(
           builder: (_) => const MySlider(),
         );
@@ -125,7 +126,7 @@ class RouteGenerator {
   }
 
   //! Validation of correct data type
-  /* case AppConstants.button:{
+  /* case AppRoutes.button:{
         //? Validation of correct data type
         if (args is String) {
           return MaterialPageRoute(

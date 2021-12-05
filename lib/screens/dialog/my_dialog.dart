@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
+import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 import 'package:flutter_demo/screens/dialog/book_data.dart';
 import 'package:flutter_demo/screens/listview/search/Widget/search_widget.dart';
@@ -59,9 +61,9 @@ class _MyDialogState extends State<MyDialog> with AppBase {
   Widget buildAppBar() => GestureDetector(
         onTap: () => hideKeyBoard(),
         child: Scaffold(
-          backgroundColor: appColor.mGrey,
+          backgroundColor: AppColors.grey,
           appBar: const CommonAppBar(
-            icon: 'assets/images/ic_custom_back.png',
+            icon: AppImages.icCustomBack,
             title: 'Dialog',
           ),
           body: buildDialogScreen(),
@@ -157,43 +159,56 @@ class _MyDialogState extends State<MyDialog> with AppBase {
 
   void myFullDialog() {
     showGeneralDialog(
-        //barrierColor: Colors.black.withOpacity(0.5),
-        transitionBuilder: (context, a1, a2, widget) {
-          return Transform.scale(
-            scale: a1.value,
-            child: Opacity(
-              opacity: a1.value,
-              child: Center(
-                child: Column(
-                  children: [
-                    buildSearchView(),
-                    Expanded(
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: books.length,
-                          itemBuilder: (context, idx) {
-                            final book = books[idx];
-                            return buildBook(book);
-                          }),
-                    )
-                  ],
-                ),
-              ),
+      transitionBuilder: (context, a1, a2, widget) {
+        return Transform.scale(
+          scale: a1.value,
+          child: Opacity(opacity: a1.value, child: widget),
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 200),
+      barrierDismissible: true,
+      barrierColor: Colors.black45,
+      barrierLabel: '',
+      context: context,
+      pageBuilder: (context, animation1, animation2) => Center(
+        child: SizedBox(
+          width: getScreenWidth(context) - 50,
+          height: getScreenHeight(context) - 100,
+          /* decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(20.0)), */
+          child: Card(
+            elevation: 10.0,
+            shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: const BorderSide(color: Colors.white),
             ),
-          );
-        },
-        transitionDuration: const Duration(milliseconds: 200),
-        barrierDismissible: false,
-        barrierColor: Colors.black45,
-        barrierLabel: '',
-        context: context,
-        pageBuilder: (context, animation1, animation2) => Container());
+            child: Column(
+              children: <Widget>[
+                buildSearchView(),
+                Expanded(
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: books.length,
+                      itemBuilder: (context, idx) {
+                        final book = books[idx];
+                        return buildBook(book);
+                      }),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   Widget buildSearchView() => SearchWidget(
         text: query,
         hintText: 'Title or Author Name',
         onChanged: searchBook,
+        margin: 15.0,
       );
 
   void searchBook(String query) {

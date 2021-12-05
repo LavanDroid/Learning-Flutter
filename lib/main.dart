@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'base/app_base.dart';
-import 'constants/app_constants.dart';
+import 'constants/app_route.dart';
 import 'routes/route_generator.dart';
 
 void main() {
@@ -42,7 +42,7 @@ class _MyDemoState extends State<MyDemo> with AppBase {
       title: 'Veera Flutter',
       //debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.generateRoute,
-      initialRoute: AppConstants.spalsh,
+      initialRoute: AppRoutes.spalsh,
     );
   }
 }

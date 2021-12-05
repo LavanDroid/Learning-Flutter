@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
 
 import 'builder_model.dart';
 import 'item_widgets.dart';
@@ -27,7 +28,7 @@ class _MyListBuilderState extends State<MyListBuilder> with AppBase {
       );
 
   Widget buildBuilderScreen() => Scaffold(
-        backgroundColor: appColor.mGrey,
+        backgroundColor: AppColors.grey,
         body: buildListScreen(),
       );
 

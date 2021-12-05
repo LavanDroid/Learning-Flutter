@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
 
 class TextFieldBorder extends StatefulWidget {
   const TextFieldBorder({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _TextFieldBorderState extends State<TextFieldBorder> with AppBase {
         //? Hide the soft keyboard by clicking outside of TextField or anywhere on the screen
         onTap: () => hideKeyBoard(),
         child: Scaffold(
-          backgroundColor: appColor.mGrey,
+          backgroundColor: AppColors.grey,
           body: _wBorderScreen(),
         ),
       );

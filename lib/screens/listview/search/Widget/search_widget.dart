@@ -5,12 +5,14 @@ class SearchWidget extends StatefulWidget {
   final String text;
   final ValueChanged<String> onChanged;
   final String hintText;
+  final double? margin;
 
   const SearchWidget({
     Key? key,
     required this.text,
     required this.onChanged,
     required this.hintText,
+    this.margin,
   }) : super(key: key);
 
   @override
@@ -34,6 +36,7 @@ class _SearchWidgetState extends State<SearchWidget> with AppBase {
         border: Border.all(color: Colors.black26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 8),
+      margin: EdgeInsets.all(widget.margin ?? 0.0),
       child: TextField(
         controller: controller,
         decoration: InputDecoration(

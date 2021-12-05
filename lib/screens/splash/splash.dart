@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
-import 'package:flutter_demo/constants/app_constants.dart';
+import 'package:flutter_demo/constants/app_image.dart';
+import 'package:flutter_demo/constants/app_route.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -25,12 +26,12 @@ class _SplashScreenState extends State<SplashScreen> with AppBase {
         body: SizedBox(
             width: double.infinity,
             height: double.infinity,
-            child: Image.asset('assets/images/jvp_splash.png')));
+            child: Image.asset(AppImages.bgSplash)));
   }
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {}).then(
-      (value) => navigateToReplace(mContext, AppConstants.home),
+      (value) => navigateToReplace(mContext, AppRoutes.home),
     );
   }
 }

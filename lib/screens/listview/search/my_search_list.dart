@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
 
 import 'Api/books_api.dart';
 import 'Widget/search_widget.dart';
@@ -55,9 +56,9 @@ class _MySearchListState extends State<MySearchList> with AppBase {
   }
 
   Widget buildAppBar() => Scaffold(
-        backgroundColor: appColor.mGrey,
+        backgroundColor: AppColors.grey,
         /* appBar: const CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
+          icon: AppImages.icCustomBack,
           title: 'Search ListView',
         ), */
         body: buildSearchListScreen(),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
-import 'package:flutter_demo/base/app_string.dart';
-import 'package:flutter_demo/constants/app_constants.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
+import 'package:flutter_demo/constants/app_route.dart';
+import 'package:flutter_demo/constants/app_string.dart';
 import 'package:flutter_demo/model/main_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -57,11 +58,11 @@ class _HomeState extends State<Home> with AppBase {
                   },
                   icon: const Icon(Icons.more_vert))
             ],
-            flexibleSpace: SafeArea(
+            flexibleSpace: const SafeArea(
               child: Icon(
                 Icons.camera,
                 size: 55.0,
-                color: appColor.mBlue,
+                color: AppColors.grey,
                 // color: Colors.red.withOpacity(1),
                 //color: Color.fromRGBO(252, 186, 3, 0.5),
                 // color: Color(0xffffffff),
@@ -78,12 +79,12 @@ class _HomeState extends State<Home> with AppBase {
                 color: Colors.blueGrey,
                 height: 75.0,
                 width: double.infinity,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Flutter Demo',
                     style: TextStyle(
                         fontSize: 22.0,
-                        color: appColor.mYellow,
+                        color: AppColors.yellow,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -135,7 +136,7 @@ class _HomeState extends State<Home> with AppBase {
     switch (item.id) {
       case 1: //Button
         {
-          navigateTo(mContext, AppConstants.button,
+          navigateTo(mContext, AppRoutes.button,
               data: 'Data from home \u265A');
           break;
         }
@@ -153,67 +154,67 @@ class _HomeState extends State<Home> with AppBase {
         }
       case 3: // Dialog
         {
-          navigateTo(mContext, AppConstants.dialog);
+          navigateTo(mContext, AppRoutes.dialog);
           break;
         }
       case 4: //AppBar
         {
-          navigateTo(mContext, AppConstants.appBar);
+          navigateTo(mContext, AppRoutes.appBar);
           break;
         }
       case 5: //TextView
         {
-          navigateTo(mContext, AppConstants.textview);
+          navigateTo(mContext, AppRoutes.textview);
           break;
         }
       case 6: //TextField
         {
-          navigateTo(mContext, AppConstants.textField);
+          navigateTo(mContext, AppRoutes.textField);
           break;
         }
       case 7: //ListView
         {
-          navigateTo(mContext, AppConstants.listview);
+          navigateTo(mContext, AppRoutes.listview);
           break;
         }
       case 8: //Dropdowm
         {
-          navigateTo(mContext, AppConstants.dropdown);
+          navigateTo(mContext, AppRoutes.dropdown);
           break;
         }
       case 9: //Popup Menu
         {
-          navigateTo(mContext, AppConstants.popupMenu);
+          navigateTo(mContext, AppRoutes.popupMenu);
           break;
         }
       case 10: //Radio Button
         {
-          navigateTo(mContext, AppConstants.radioButton);
+          navigateTo(mContext, AppRoutes.radioButton);
           break;
         }
       case 11: //Switch Button
         {
-          navigateTo(mContext, AppConstants.switchButton);
+          navigateTo(mContext, AppRoutes.switchButton);
           break;
         }
       case 12: //Toggle Button
         {
-          navigateTo(mContext, AppConstants.toggleButton);
+          navigateTo(mContext, AppRoutes.toggleButton);
           break;
         }
       case 13: // Check Box
         {
-          navigateTo(mContext, AppConstants.checkBox);
+          navigateTo(mContext, AppRoutes.checkBox);
           break;
         }
       case 14: // Expansion Tile
         {
-          navigateTo(mContext, AppConstants.expansionTile);
+          navigateTo(mContext, AppRoutes.expansionTile);
           break;
         }
       case 15: // Slider (SeekBar)
         {
-          navigateTo(mContext, AppConstants.slider);
+          navigateTo(mContext, AppRoutes.slider);
           break;
         }
       default:

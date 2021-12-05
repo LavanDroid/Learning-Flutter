@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
 import 'app_extension.dart';
 
 class AppBase {
   late var appPrint = AppPrint();
-  late var appColor = AppColors();
   late var showToast = ShowToast();
   late var hideKeyBoard = HideKeyBoard();
   late var validateEmail = ValidateEmail();
@@ -16,8 +14,7 @@ class AppBase {
   // void myVeeraMethod();
 
   ///? Move to the next page, remain the stack
-  navigateTo(BuildContext mContext, String routePage,
-      {String data = ''}) {
+  navigateTo(BuildContext mContext, String routePage, {String data = ''}) {
     if (data.isNotEmpty) {
       Navigator.pushNamed(mContext, routePage, arguments: data);
     } else {
@@ -45,4 +42,12 @@ class AppBase {
       Navigator.pushAndRemoveUntil(mContext, routePage, (route) => false);
     }
   } */
+
+  getScreenWidth(BuildContext mContext) {
+    return MediaQuery.of(mContext).size.width;
+  }
+
+  getScreenHeight(BuildContext mContext) {
+    return MediaQuery.of(mContext).size.height;
+  }
 }

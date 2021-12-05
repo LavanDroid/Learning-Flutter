@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
+import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
 import 'list_builder/my_list_builder.dart';
@@ -28,9 +30,9 @@ class _MyListViewState extends State<MyListView> with AppBase {
       );
 
   Widget buildAppBar() => Scaffold(
-        backgroundColor: appColor.mGrey,
+        backgroundColor: AppColors.grey,
         appBar: const CommonAppBar(
-          icon: 'assets/images/ic_custom_back.png',
+          icon: AppImages.icCustomBack,
           title: 'ListView',
         ),
         body: buildListScreen(),

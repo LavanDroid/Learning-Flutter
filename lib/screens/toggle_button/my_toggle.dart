@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
+import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,9 +24,9 @@ class _MyToggleButtonState extends State<MyToggleButton> with AppBase {
   Widget _wAppBar() => GestureDetector(
         onTap: () => hideKeyBoard(),
         child: Scaffold(
-          backgroundColor: appColor.mGrey,
+          backgroundColor: AppColors.grey,
           appBar: const CommonAppBar(
-            icon: 'assets/images/ic_custom_back.png',
+            icon: AppImages.icCustomBack,
             title: 'Toggle Buttons',
           ),
           body: _wToggleScreen(),

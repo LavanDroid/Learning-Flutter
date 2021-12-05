@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/screens/buttons/common_button.dart';
 
 class TextFieldFocus extends StatefulWidget {
@@ -23,7 +24,7 @@ class _TextFieldFocusState extends State<TextFieldFocus> with AppBase {
         //? Hide the soft keyboard by clicking outside of TextField or anywhere on the screen
         onTap: () => hideKeyBoard(),
         child: Scaffold(
-          backgroundColor: appColor.mGrey,
+          backgroundColor: AppColors.grey,
           body: _wFocusScreen(),
         ),
       );
