@@ -30,11 +30,11 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       ),
       elevation: 0,
       backgroundColor: Colors.transparent,
-      child: contentBox(context),
+      child: contentBox(),
     );
   }
 
-  contentBox(context) {
+  contentBox() {
     return Stack(
       children: <Widget>[
         Container(

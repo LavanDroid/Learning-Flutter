@@ -10,6 +10,7 @@ import 'package:flutter_demo/screens/listview/search/Widget/search_widget.dart';
 import 'package:flutter_demo/screens/listview/search/book.dart';
 
 import 'custom_dialog_box.dart';
+import 'full_screen_dialog.dart';
 
 class MyDialog extends StatefulWidget {
   const MyDialog({Key? key}) : super(key: key);
@@ -152,7 +153,8 @@ class _MyDialogState extends State<MyDialog> with AppBase {
 
   Widget buildFullScreenDialog() => ElevatedButton(
         onPressed: () {
-          myFullDialog();
+          //myFullDialog();
+          customFullScreenDialog();
         },
         child: const Text('Full Screen Dialog'),
       );
@@ -237,4 +239,27 @@ class _MyDialogState extends State<MyDialog> with AppBase {
         title: Text(book.title),
         subtitle: Text(book.author),
       );
+
+  customFullScreenDialog() {
+    showGeneralDialog(
+        transitionBuilder: (context, a1, a2, widget) {
+          return Transform.scale(
+            scale: a1.value,
+            child: Opacity(opacity: a1.value, child: widget),
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 200),
+        barrierDismissible: true,
+        barrierColor: Colors.black45,
+        barrierLabel: '',
+        context: context,
+        pageBuilder: (context, animation1, animation2) => FullScreenDialog(
+              hint: 'Title or Author Name',
+              isShowSearch: true,
+              onSelectedItem: () {
+                appPrint('Item selected in dialog');
+              },
+              books: books,
+            ));
+  }
 }

@@ -115,5 +115,8 @@ class _MySearchListState extends State<MySearchList> with AppBase {
         ),
         title: Text(book.title),
         subtitle: Text(book.author),
+        onTap: () {
+          showToast(book.title);
+        },
       );
 }
