@@ -60,17 +60,14 @@ class _MyDialogState extends State<MyDialog> with AppBase {
         child: buildAppBar(),
       );
 
-  Widget buildAppBar() => GestureDetector(
-        onTap: () => hideKeyBoard(),
-        child: Scaffold(
-          backgroundColor: AppColors.grey,
-          appBar: const CommonAppBar(
-            icon: AppImages.icCustomBack,
-            title: 'Dialog',
-          ),
-          body: buildDialogScreen(),
-        ),
-      );
+  Widget buildAppBar() => Scaffold(
+    backgroundColor: AppColors.grey,
+    appBar: const CommonAppBar(
+      icon: AppImages.icCustomBack,
+      title: 'Dialog',
+    ),
+    body: buildDialogScreen(),
+  );
 
   Widget buildDialogScreen() => GestureDetector(
         onTap: () => hideKeyBoard(),

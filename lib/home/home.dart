@@ -216,14 +216,19 @@ class _HomeState extends State<Home> with AppBase {
           navigateTo(mContext, AppRoutes.slider);
           break;
         }
-        case 16: // Introduction
+      case 16: // Introduction
         {
           navigateTo(mContext, AppRoutes.introduction);
           break;
         }
-        case 17: // Signature
+      case 17: // Signature
         {
           navigateTo(mContext, AppRoutes.signature);
+          break;
+        }
+      case 18: // Time Picker
+        {
+          navigateTo(mContext, AppRoutes.timePicker);
           break;
         }
       default:

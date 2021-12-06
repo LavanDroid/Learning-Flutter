@@ -18,6 +18,7 @@ import 'package:flutter_demo/screens/splash/splash.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
 import 'package:flutter_demo/screens/textfield/my_textfield.dart';
 import 'package:flutter_demo/screens/textview/my_textview.dart';
+import 'package:flutter_demo/screens/time_picker/time_picker.dart';
 import 'package:flutter_demo/screens/toggle_button/my_toggle.dart';
 
 class RouteGenerator {
@@ -128,6 +129,10 @@ class RouteGenerator {
       case AppRoutes.signature:
         return MaterialPageRoute(
           builder: (_) => const MySignature(),
+        );
+      case AppRoutes.timePicker:
+        return MaterialPageRoute(
+          builder: (_) => const MyTimePicker(),
         );
 
       default:
