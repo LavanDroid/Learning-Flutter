@@ -70,5 +70,9 @@ class CatalogModel {
       name: 'Slider (SeekBar)',
       id: 15,
     ),
+    MainModel(
+      name: 'Introduction',
+      id: 16,
+    ),
   ];
 }

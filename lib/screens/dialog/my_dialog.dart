@@ -250,7 +250,7 @@ class _MyDialogState extends State<MyDialog> with AppBase {
           );
         },
         transitionDuration: const Duration(milliseconds: 200),
-        barrierDismissible: true,
+        barrierDismissible: false,
         barrierColor: Colors.black45,
         barrierLabel: '',
         context: context,

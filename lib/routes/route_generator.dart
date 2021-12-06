@@ -8,6 +8,7 @@ import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
 import 'package:flutter_demo/screens/dialog/my_dialog.dart';
 import 'package:flutter_demo/screens/dropdown/my_dropdown.dart';
 import 'package:flutter_demo/screens/expansion_tile/expansion_tile.dart';
+import 'package:flutter_demo/screens/intro/intro.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
 import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
@@ -117,6 +118,11 @@ class RouteGenerator {
         case AppRoutes.slider:
         return MaterialPageRoute(
           builder: (_) => const MySlider(),
+        );
+
+        case AppRoutes.introduction:
+        return MaterialPageRoute(
+          builder: (_) => const MyIntroduction(),
         );
 
       default:

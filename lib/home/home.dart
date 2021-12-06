@@ -62,7 +62,7 @@ class _HomeState extends State<Home> with AppBase {
               child: Icon(
                 Icons.camera,
                 size: 55.0,
-                color: AppColors.grey,
+                color: AppColors.blue,
                 // color: Colors.red.withOpacity(1),
                 //color: Color.fromRGBO(252, 186, 3, 0.5),
                 // color: Color(0xffffffff),
@@ -136,8 +136,7 @@ class _HomeState extends State<Home> with AppBase {
     switch (item.id) {
       case 1: //Button
         {
-          navigateTo(mContext, AppRoutes.button,
-              data: 'Data from home \u265A');
+          navigateTo(mContext, AppRoutes.button, data: 'Data from home \u265A');
           break;
         }
       case 2: // Toast
@@ -215,6 +214,11 @@ class _HomeState extends State<Home> with AppBase {
       case 15: // Slider (SeekBar)
         {
           navigateTo(mContext, AppRoutes.slider);
+          break;
+        }
+        case 16: // Introduction
+        {
+          navigateTo(mContext, AppRoutes.introduction);
           break;
         }
       default:

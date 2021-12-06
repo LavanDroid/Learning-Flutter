@@ -4,6 +4,7 @@ class AppColors {
   static const Color blue = Color(0xff001bff);
   static const Color yellow = Color(0xffffff00);
   static const Color grey = Color(0xfff0f0f0);
+  static const Color scienceBlue = Color(0xff0074e4);
 
   // ? If you wish to use ARGB format
   // Color color1 = HexColor("#ff0fff");
