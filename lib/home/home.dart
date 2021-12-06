@@ -221,6 +221,11 @@ class _HomeState extends State<Home> with AppBase {
           navigateTo(mContext, AppRoutes.introduction);
           break;
         }
+        case 17: // Signature
+        {
+          navigateTo(mContext, AppRoutes.signature);
+          break;
+        }
       default:
         {
           appPrint(

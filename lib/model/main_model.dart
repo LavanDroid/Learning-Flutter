@@ -74,5 +74,9 @@ class CatalogModel {
       name: 'Introduction',
       id: 16,
     ),
+    MainModel(
+      name: 'Signature',
+      id: 17,
+    ),
   ];
 }

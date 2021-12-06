@@ -17,5 +17,6 @@ class AppRoutes {
   static const String expansionTile = '/expansion_tile';
   static const String slider = '/slider';
   static const String introduction = '/intro';
+  static const String signature = '/signature';
   // static const String toast = '/toast';
 }

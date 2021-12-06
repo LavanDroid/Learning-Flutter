@@ -12,6 +12,7 @@ import 'package:flutter_demo/screens/intro/intro.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
 import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
+import 'package:flutter_demo/screens/signature/signature.dart';
 import 'package:flutter_demo/screens/slider/my_slider.dart';
 import 'package:flutter_demo/screens/splash/splash.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
@@ -115,14 +116,18 @@ class RouteGenerator {
           builder: (_) => const MyExpansionTile(),
         );
 
-        case AppRoutes.slider:
+      case AppRoutes.slider:
         return MaterialPageRoute(
           builder: (_) => const MySlider(),
         );
 
-        case AppRoutes.introduction:
+      case AppRoutes.introduction:
         return MaterialPageRoute(
           builder: (_) => const MyIntroduction(),
+        );
+      case AppRoutes.signature:
+        return MaterialPageRoute(
+          builder: (_) => const MySignature(),
         );
 
       default:
