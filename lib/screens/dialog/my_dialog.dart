@@ -23,6 +23,7 @@ class _MyDialogState extends State<MyDialog> with AppBase {
   List<Book> books = [];
   String query = '';
   Timer? debouncer;
+  late Book onSelectedItem;
 
   @override
   void initState() {
@@ -256,10 +257,11 @@ class _MyDialogState extends State<MyDialog> with AppBase {
         pageBuilder: (context, animation1, animation2) => FullScreenDialog(
               hint: 'Title or Author Name',
               isShowSearch: true,
-              onSelectedItem: () {
-                appPrint('Item selected in dialog');
-              },
               books: books,
+              callback: (itemSeleted) => setState(() {
+                onSelectedItem = itemSeleted;
+                showToast(onSelectedItem.title);
+              }),
             ));
   }
 }
