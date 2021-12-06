@@ -1,8 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
+import 'package:flutter_demo/constants/app_constants.dart';
 import 'package:flutter_demo/screens/intro/slide_tile.dart';
 
 import 'slider_model.dart';
@@ -154,7 +153,7 @@ class _MyIntroductionState extends State<MyIntroduction> with AppBase {
           showToast("Get Started Now");
         },
         child: Container(
-          height: Platform.isIOS ? 65 : 55,
+          height: AppConstants.isIOS ? 65 : 55,
           color: Colors.blue,
           alignment: Alignment.center,
           child: const Text(

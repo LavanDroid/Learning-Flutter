@@ -1,5 +1,9 @@
+import 'dart:io';
+
 class AppConstants {
   static const bool inProduction = bool.fromEnvironment('dart.vm.product');
+  static bool isAndroid = Platform.isAndroid;
+  static bool isIOS = Platform.isIOS;
 
   //? Api path !//
   static const String apiGetBookPath =

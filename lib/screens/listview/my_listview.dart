@@ -3,6 +3,7 @@ import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/listview/refresh/refresh.dart';
 
 import 'list_builder/my_list_builder.dart';
 import 'search/my_search_list.dart';
@@ -25,7 +26,7 @@ class _MyListViewState extends State<MyListView> with AppBase {
   ]; */
   @override
   Widget build(BuildContext context) => DefaultTabController(
-        length: 4,
+        length: 5,
         child: buildAppBar(),
       );
 
@@ -48,7 +49,8 @@ class _MyListViewState extends State<MyListView> with AppBase {
                 MySimpleList(),
                 MyListBuilder(),
                 MySeparated(),
-                MySearchList()
+                MySearchList(),
+                MyPullToRefresh(),
                 // ...mTabScreen.map(Widget widget){}.toList(),
               ],
             ),
@@ -67,7 +69,7 @@ class _MyListViewState extends State<MyListView> with AppBase {
         indicatorSize: TabBarIndicatorSize.tab,
         indicatorPadding: EdgeInsets.all(5.0),
         indicatorColor: Colors.orange,
-        isScrollable: false,
+        isScrollable: true,
         tabs: [
           Tab(
             text: 'Simple',
@@ -81,6 +83,9 @@ class _MyListViewState extends State<MyListView> with AppBase {
           ),
           Tab(
             text: 'Search',
+          ),
+          Tab(
+            text: 'Pull To Refresh',
           ),
         ],
       ),
