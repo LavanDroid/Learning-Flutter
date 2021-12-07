@@ -79,7 +79,7 @@ class CatalogModel {
       id: 17,
     ),
     MainModel(
-      name: 'Time Picker',
+      name: 'Date & Time Picker',
       id: 18,
     ),
   ];

@@ -5,6 +5,7 @@ import 'package:flutter_demo/home/home.dart';
 import 'package:flutter_demo/screens/buttons/my_button.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
 import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
+import 'package:flutter_demo/screens/date_time_picker/my_date_time.dart';
 import 'package:flutter_demo/screens/dialog/my_dialog.dart';
 import 'package:flutter_demo/screens/dropdown/my_dropdown.dart';
 import 'package:flutter_demo/screens/expansion_tile/expansion_tile.dart';
@@ -18,7 +19,6 @@ import 'package:flutter_demo/screens/splash/splash.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
 import 'package:flutter_demo/screens/textfield/my_textfield.dart';
 import 'package:flutter_demo/screens/textview/my_textview.dart';
-import 'package:flutter_demo/screens/time_picker/time_picker.dart';
 import 'package:flutter_demo/screens/toggle_button/my_toggle.dart';
 
 class RouteGenerator {
@@ -130,9 +130,9 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const MySignature(),
         );
-      case AppRoutes.timePicker:
+      case AppRoutes.dateTimePicker:
         return MaterialPageRoute(
-          builder: (_) => const MyTimePicker(),
+          builder: (_) => const MyDateAndTime(),
         );
 
       default:

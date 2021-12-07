@@ -226,9 +226,9 @@ class _HomeState extends State<Home> with AppBase {
           navigateTo(mContext, AppRoutes.signature);
           break;
         }
-      case 18: // Time Picker
+      case 18: // Date & Time Picker
         {
-          navigateTo(mContext, AppRoutes.timePicker);
+          navigateTo(mContext, AppRoutes.dateTimePicker);
           break;
         }
       default:

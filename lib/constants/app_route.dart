@@ -18,6 +18,6 @@ class AppRoutes {
   static const String slider = '/slider';
   static const String introduction = '/intro';
   static const String signature = '/signature';
-  static const String timePicker = '/time_picker';
+  static const String dateTimePicker = '/date_time_picker';
   // static const String toast = '/toast';
 }

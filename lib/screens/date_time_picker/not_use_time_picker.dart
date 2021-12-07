@@ -3,14 +3,14 @@ import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
-class MyTimePicker extends StatefulWidget {
-  const MyTimePicker({Key? key}) : super(key: key);
+class MyDateTimePicker extends StatefulWidget {
+  const MyDateTimePicker({Key? key}) : super(key: key);
 
   @override
-  _MyTimePickerState createState() => _MyTimePickerState();
+  _MyDateTimePickerState createState() => _MyDateTimePickerState();
 }
 
-class _MyTimePickerState extends State<MyTimePicker> with AppBase {
+class _MyDateTimePickerState extends State<MyDateTimePicker> with AppBase {
   TimeOfDay timeOfDay = const TimeOfDay(hour: 8, minute: 30);
 
   @override
