@@ -24,7 +24,7 @@ class _MyDateAndTimeState extends State<MyDateAndTime> with AppBase {
   Widget buildAppBar() => Scaffold(
         appBar: const CommonAppBar(
           icon: AppImages.icCustomBack,
-          title: 'Date And Time Picker',
+          title: 'Date And Time',
         ),
         body: buildPage(),
         bottomNavigationBar: buildBottomBar(),
@@ -52,6 +52,7 @@ class _MyDateAndTimeState extends State<MyDateAndTime> with AppBase {
             label: 'Advanced',
           ),
         ],
+        onTap: (int index) => setState(() => this.index = index),
       );
 
   Widget buildScreen() {
