@@ -82,5 +82,9 @@ class CatalogModel {
       name: 'Date & Time',
       id: 18,
     ),
+    MainModel(
+      name: 'Camera & Gallery',
+      id: 19,
+    ),
   ];
 }

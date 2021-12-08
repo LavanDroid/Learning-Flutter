@@ -3,6 +3,7 @@ import 'package:flutter_demo/constants/app_constants.dart';
 import 'package:flutter_demo/constants/app_route.dart';
 import 'package:flutter_demo/home/home.dart';
 import 'package:flutter_demo/screens/buttons/my_button.dart';
+import 'package:flutter_demo/screens/camera_gallery/camera_gallery.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
 import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
 import 'package:flutter_demo/screens/date_time_picker/my_date_time.dart';
@@ -133,6 +134,10 @@ class RouteGenerator {
       case AppRoutes.dateTimePicker:
         return MaterialPageRoute(
           builder: (_) => const MyDateAndTime(),
+        );
+      case AppRoutes.cameraGallery:
+        return MaterialPageRoute(
+          builder: (_) => const MyCameraGallery(),
         );
 
       default:

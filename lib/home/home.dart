@@ -231,6 +231,11 @@ class _HomeState extends State<Home> with AppBase {
           navigateTo(mContext, AppRoutes.dateTimePicker);
           break;
         }
+      case 19: // Camera & Gallery
+        {
+          navigateTo(mContext, AppRoutes.cameraGallery);
+          break;
+        }
       default:
         {
           appPrint(

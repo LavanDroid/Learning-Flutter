@@ -19,5 +19,6 @@ class AppRoutes {
   static const String introduction = '/intro';
   static const String signature = '/signature';
   static const String dateTimePicker = '/date_time_picker';
+  static const String cameraGallery = '/camera_gallery';
   // static const String toast = '/toast';
 }
