@@ -34,14 +34,24 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  # Easily create toast messages
   fluttertoast: ^8.0.8
+  # Show images from the internet and keep them in the cache
   cached_network_image: ^3.1.0+1
+  # Generate App Icon
   flutter_launcher_icons: "^0.9.2"
+  # Font Awesome Icon pack
   font_awesome_flutter: ^9.2.0
+  # A powerful Http client for Dart
   dio: ^4.0.4
+  # Signature Pad widget
   syncfusion_flutter_signaturepad: ^19.3.56
+  # Code to deal with internationalized/localized messages, date and number formatting and parsing
   intl: ^0.17.0
+  # pick video & image
   image_picker: ^0.8.4+4
+  # store & load data securely
+  flutter_secure_storage: ^5.0.2
 
 dev_dependencies:
   flutter_test:

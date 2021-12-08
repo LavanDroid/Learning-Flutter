@@ -31,6 +31,8 @@ class MyButtons extends StatefulWidget {
 }
 
 class _MyButtonsState extends State<MyButtons> with AppBase {
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) => Container(
         child: _wAppBar(),
@@ -110,7 +112,6 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
               const SizedBox(height: 25.0),
               _wTextButtonThree(),
               const SizedBox(height: 50.0),
-
               _wTextIconButton(),
               const SizedBox(height: 25.0),
               _wIconButtonOne(),
@@ -122,6 +123,10 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
               _wTextGradientButton(),
               const SizedBox(height: 25.0),
               _wGradientButton(),
+              const SizedBox(height: 50.0),
+              buildTitleText('Loading Button:-'),
+              const SizedBox(height: 25.0),
+              buildLoadingButton(),
               const SizedBox(height: 50.0),
               // _wListViewChildren(),
               _wTextCustomOutlinedButton(),
@@ -626,6 +631,76 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
       style: const TextStyle(color: Colors.black, fontSize: 24),
     );
   }
+
+  buildTitleText(String name) => Container(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          name,
+          style: const TextStyle(
+              fontSize: 25.0,
+              color: Colors.red,
+              decoration: TextDecoration.underline,
+              fontWeight: FontWeight.bold),
+        ),
+      );
+
+  Widget buildLoadingButton() => ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape: const StadiumBorder(),
+          minimumSize: const Size.fromHeight(55.0),
+        ),
+        /* style: ElevatedButton.styleFrom(
+          shape: const StadiumBorder(),
+          minimumSize: const Size.fromHeight(55.0),
+          onSurface: Colors.red,
+        ), */
+        /* style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+            if (states.contains(MaterialState.disabled)) {
+              return Colors.brown; // Disabled color
+            }
+            return Colors.blue; // Regular color
+          }),
+        ), */
+        onPressed: isLoading
+            ? null
+            : () async {
+                setState(() {
+                  isLoading = true;
+                });
+                await Future.delayed(const Duration(seconds: 5));
+                setState(() {
+                  isLoading = false;
+                });
+              },
+        child: (isLoading)
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: CircularProgressIndicator(
+                      color: Colors.white,
+                      strokeWidth: 2.5,
+                    ),
+                  ),
+                  SizedBox(width: 10.0),
+                  Text(
+                    'Loading...',
+                    style: TextStyle(
+                      fontSize: 28.0,
+                    ),
+                  ),
+                ],
+              )
+            : const Text(
+                'Submit',
+                style: TextStyle(
+                  fontSize: 28.0,
+                ),
+              ),
+      );
 
   /* void showSnack(String text) {
     _rootScaffoldMessengerKey.currentState?.removeCurrentSnackBar();
