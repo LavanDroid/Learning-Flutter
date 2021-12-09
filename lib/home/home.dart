@@ -236,6 +236,11 @@ class _HomeState extends State<Home> with AppBase {
           navigateTo(mContext, AppRoutes.cameraGallery);
           break;
         }
+        case 20: // Drawer
+        {
+          navigateTo(mContext, AppRoutes.drawerHome);
+          break;
+        }
       default:
         {
           appPrint(

@@ -6,4 +6,5 @@ class AppImages {
   static const String bgIntroOne = 'assets/images/intro_one.png';
   static const String bgIntroTwo = 'assets/images/intro_two.png';
   static const String bgIntroThree = 'assets/images/intro_three.png';
+  static const String bgDrawerHeader = 'assets/images/bg_header.png';
 }

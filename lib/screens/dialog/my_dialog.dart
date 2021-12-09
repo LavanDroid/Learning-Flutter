@@ -6,7 +6,6 @@ import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 import 'package:flutter_demo/screens/dialog/book_data.dart';
-import 'package:flutter_demo/screens/listview/search/Widget/search_widget.dart';
 import 'package:flutter_demo/screens/listview/search/book.dart';
 
 import 'custom_dialog_box.dart';
@@ -21,8 +20,6 @@ class MyDialog extends StatefulWidget {
 
 class _MyDialogState extends State<MyDialog> with AppBase {
   List<Book> books = [];
-  String query = '';
-  Timer? debouncer;
   late Book onSelectedItem;
 
   @override
@@ -30,23 +27,6 @@ class _MyDialogState extends State<MyDialog> with AppBase {
     super.initState();
 
     init();
-  }
-
-  @override
-  void dispose() {
-    debouncer?.cancel();
-    super.dispose();
-  }
-
-  void debounce(
-    VoidCallback callback, {
-    Duration duration = const Duration(milliseconds: 800),
-  }) {
-    if (debouncer != null) {
-      debouncer!.cancel();
-    }
-
-    debouncer = Timer(duration, callback);
   }
 
   Future init() async {
@@ -61,13 +41,13 @@ class _MyDialogState extends State<MyDialog> with AppBase {
       );
 
   Widget buildAppBar() => Scaffold(
-    backgroundColor: AppColors.grey,
-    appBar: const CommonAppBar(
-      icon: AppImages.icCustomBack,
-      title: 'Dialog',
-    ),
-    body: buildDialogScreen(),
-  );
+        backgroundColor: AppColors.grey,
+        appBar: const CommonAppBar(
+          icon: AppImages.icCustomBack,
+          title: 'Dialog',
+        ),
+        body: buildDialogScreen(),
+      );
 
   Widget buildDialogScreen() => GestureDetector(
         onTap: () => hideKeyBoard(),
@@ -151,91 +131,9 @@ class _MyDialogState extends State<MyDialog> with AppBase {
 
   Widget buildFullScreenDialog() => ElevatedButton(
         onPressed: () {
-          //myFullDialog();
           customFullScreenDialog();
         },
         child: const Text('Full Screen Dialog'),
-      );
-
-  void myFullDialog() {
-    showGeneralDialog(
-      transitionBuilder: (context, a1, a2, widget) {
-        return Transform.scale(
-          scale: a1.value,
-          child: Opacity(opacity: a1.value, child: widget),
-        );
-      },
-      transitionDuration: const Duration(milliseconds: 200),
-      barrierDismissible: true,
-      barrierColor: Colors.black45,
-      barrierLabel: '',
-      context: context,
-      pageBuilder: (context, animation1, animation2) => Center(
-        child: SizedBox(
-          width: getScreenWidth(context) - 50,
-          height: getScreenHeight(context) - 100,
-          /* decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(20.0)), */
-          child: Card(
-            elevation: 10.0,
-            shape: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: const BorderSide(color: Colors.white),
-            ),
-            child: Column(
-              children: <Widget>[
-                buildSearchView(),
-                Expanded(
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: books.length,
-                      itemBuilder: (context, idx) {
-                        final book = books[idx];
-                        return buildBook(book);
-                      }),
-                )
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildSearchView() => SearchWidget(
-        text: query,
-        hintText: 'Title or Author Name',
-        onChanged: searchBook,
-        margin: 15.0,
-      );
-
-  void searchBook(String query) {
-    final books = allBooks.where((book) {
-      final titleLower = book.title.toLowerCase();
-      final authorLower = book.author.toLowerCase();
-      final searchLower = query.toLowerCase();
-
-      return titleLower.contains(searchLower) ||
-          authorLower.contains(searchLower);
-    }).toList();
-
-    setState(() {
-      this.query = query;
-      this.books = books;
-    });
-  }
-
-  Widget buildBook(Book book) => ListTile(
-        leading: Image.network(
-          book.urlImage,
-          fit: BoxFit.cover,
-          width: 50,
-          height: 50,
-        ),
-        title: Text(book.title),
-        subtitle: Text(book.author),
       );
 
   customFullScreenDialog() {

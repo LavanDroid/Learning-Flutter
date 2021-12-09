@@ -21,4 +21,9 @@ class AppRoutes {
   static const String dateTimePicker = '/date_time_picker';
   static const String cameraGallery = '/camera_gallery';
   // static const String toast = '/toast';
+  static const String drawerHome = '/drawer_home';
+  static const String drawerProfile = '/drawer_profile';
+  static const String drawerContact = '/drawer_contact';
+  static const String drawerEvent = '/drawer_event';
+  static const String drawerNotification = '/drawer_notification';
 }

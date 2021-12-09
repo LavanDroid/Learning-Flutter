@@ -12,6 +12,11 @@ import 'package:flutter_demo/screens/dropdown/my_dropdown.dart';
 import 'package:flutter_demo/screens/expansion_tile/expansion_tile.dart';
 import 'package:flutter_demo/screens/intro/intro.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
+import 'package:flutter_demo/screens/navigation_drawer/my_drawer_home.dart';
+import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_contact.dart';
+import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_event.dart';
+import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_notification.dart';
+import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_profile.dart';
 import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
 import 'package:flutter_demo/screens/signature/signature.dart';
@@ -127,17 +132,45 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const MyIntroduction(),
         );
+
       case AppRoutes.signature:
         return MaterialPageRoute(
           builder: (_) => const MySignature(),
         );
+
       case AppRoutes.dateTimePicker:
         return MaterialPageRoute(
           builder: (_) => const MyDateAndTime(),
         );
+
       case AppRoutes.cameraGallery:
         return MaterialPageRoute(
           builder: (_) => const MyCameraGallery(),
+        );
+
+      case AppRoutes.drawerHome:
+        return MaterialPageRoute(
+          builder: (_) => DrawerHome(),
+        );
+
+      case AppRoutes.drawerProfile:
+        return MaterialPageRoute(
+          builder: (_) => const DrawerProfile(),
+        );
+
+      case AppRoutes.drawerContact:
+        return MaterialPageRoute(
+          builder: (_) => const DrawerContact(),
+        );
+
+      case AppRoutes.drawerEvent:
+        return MaterialPageRoute(
+          builder: (_) => const DrawerEvent(),
+        );
+
+      case AppRoutes.drawerNotification:
+        return MaterialPageRoute(
+          builder: (_) => const DrawerNotification(),
         );
 
       default:
