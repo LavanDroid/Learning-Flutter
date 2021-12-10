@@ -26,6 +26,7 @@ import 'package:flutter_demo/screens/switch_button/my_switch.dart';
 import 'package:flutter_demo/screens/textfield/my_textfield.dart';
 import 'package:flutter_demo/screens/textview/my_textview.dart';
 import 'package:flutter_demo/screens/toggle_button/my_toggle.dart';
+import 'package:flutter_demo/screens/websocket/web_socket.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -171,6 +172,11 @@ class RouteGenerator {
       case AppRoutes.drawerNotification:
         return MaterialPageRoute(
           builder: (_) => const DrawerNotification(),
+        );
+
+      case AppRoutes.websocket:
+        return MaterialPageRoute(
+          builder: (_) => MyWebSocket(),
         );
 
       default:

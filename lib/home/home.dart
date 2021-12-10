@@ -241,6 +241,11 @@ class _HomeState extends State<Home> with AppBase {
           navigateTo(mContext, AppRoutes.drawerHome);
           break;
         }
+        case 21: // WebSocket
+        {
+          navigateTo(mContext, AppRoutes.websocket);
+          break;
+        }
       default:
         {
           appPrint(

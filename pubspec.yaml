@@ -52,6 +52,8 @@ dependencies:
   image_picker: ^0.8.4+4
   # store & load data securely
   flutter_secure_storage: ^5.0.2
+  # WebSockets allow for two-way communication with a server without polling.
+  web_socket_channel: ^2.1.0
 
 dev_dependencies:
   flutter_test:

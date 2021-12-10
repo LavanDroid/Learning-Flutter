@@ -51,7 +51,7 @@ class _TextFieldGeneralState extends State<TextFieldGeneral> with AppBase {
           padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
             child: Form(
-              autovalidateMode: AutovalidateMode.always,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

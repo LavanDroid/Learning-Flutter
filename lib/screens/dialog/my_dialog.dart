@@ -60,6 +60,8 @@ class _MyDialogState extends State<MyDialog> with AppBase {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 25.0),
+                  buildSimpleDialog(),
+                  const SizedBox(height: 25.0),
                   buildCallDialog(),
                   const SizedBox(height: 25.0),
                   buildFullScreenDialog(),
@@ -70,6 +72,33 @@ class _MyDialogState extends State<MyDialog> with AppBase {
           ),
         ),
       );
+
+  Widget buildSimpleDialog() => ElevatedButton(
+        onPressed: () {
+          callSimpleDialog();
+        },
+        child: const Text('Simple Dialog'),
+      );
+
+  void callSimpleDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => SimpleDialog(
+        title: const Text('Flutter Dialog'),
+        contentPadding: const EdgeInsets.all(20.0),
+        children: [
+          const Text('Alert!'),
+          const SizedBox(height: 15.0),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Close'),
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget buildCallDialog() => ElevatedButton(
         onPressed: () {

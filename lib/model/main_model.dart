@@ -90,5 +90,9 @@ class CatalogModel {
       name: 'Drawer',
       id: 20,
     ),
+    MainModel(
+      name: 'WebSocket',
+      id: 21,
+    ),
   ];
 }

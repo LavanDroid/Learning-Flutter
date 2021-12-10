@@ -28,16 +28,19 @@ class _MySignatureState extends State<MySignature> with AppBase {
           child: Column(
               children: [
                 Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Container(
-                        child: SfSignaturePad(
-                            key: signatureGlobalKey,
-                            backgroundColor: Colors.white,
-                            strokeColor: Colors.black,
-                            minimumStrokeWidth: 1.0,
-                            maximumStrokeWidth: 4.0),
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey)))),
+                  padding: const EdgeInsets.all(10),
+                  child: Container(
+                    child: SfSignaturePad(
+                        key: signatureGlobalKey,
+                        backgroundColor: Colors.white,
+                        strokeColor: Colors.black,
+                        minimumStrokeWidth: 1.0,
+                        maximumStrokeWidth: 4.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
                 Row(children: <Widget>[
                   TextButton(
