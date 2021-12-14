@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 class MyLocation extends StatefulWidget {
@@ -71,7 +72,33 @@ class _MyLocationState extends State<MyLocation> with AppBase {
   getGPSLoaction() async {
     Position position = await getGeoLocationPosition();
     location = 'Lat: ${position.latitude} , Long: ${position.longitude}';
-    // GetAddressFromLatLong(position);
+    appPrint('Location: ' + location);
+    getAddressFromLatLong(position);
+    //setState(() {});
+  }
+
+  Future<void> getAddressFromLatLong(Position position) async {
+    List<Placemark> placemarks =
+        await placemarkFromCoordinates(position.latitude, position.longitude);
+    appPrint(placemarks);
+    Placemark place = placemarks[0];
+    // String? street = (place.street ?? place.name ?? '');
+    String? street = place.street!.isNotEmpty ? (place.street) : '';
+    if (street!.isEmpty) {
+      street = place.name!.isNotEmpty ? place.name : '';
+    }
+
+    String? sublocality =
+        place.subLocality!.isNotEmpty ? place.subLocality : '';
+    String? administrativeArea = '';
+    if (sublocality!.isEmpty) {
+      administrativeArea = place.administrativeArea!.isNotEmpty
+          ? (place.administrativeArea! + ', ')
+          : '';
+    }
+    address =
+        '$street, $sublocality, ${place.locality}, $administrativeArea ${place.postalCode}, ${place.country}';
+    setState(() {});
   }
 
   Future<Position> getGeoLocationPosition() async {
@@ -105,6 +132,7 @@ class _MyLocationState extends State<MyLocation> with AppBase {
     }
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
-    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    return await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
   }
 }
