@@ -25,7 +25,7 @@ class _MyListRefreshState extends State<MyListRefresh> with AppBase {
 
   Future loadList() async {
     //keyRefresh.currentState?.show();
-    await Future.delayed(const Duration(milliseconds: 4000));
+    await Future.delayed(const Duration(milliseconds: 400));
 
     final random = Random();
     final data = List.generate(100, (_) => random.nextInt(100));
@@ -42,7 +42,8 @@ class _MyListRefreshState extends State<MyListRefresh> with AppBase {
 
   Widget buildList() => data.isEmpty
       ? const Center(child: CircularProgressIndicator())
-      : RefreshWidget(
+      : RefreshIndicator(
+          // RefreshIndicator or RefreshWidget
           //keyRefresh: keyRefresh,
           onRefresh: loadList,
           child: ListView.builder(

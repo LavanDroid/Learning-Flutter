@@ -236,14 +236,24 @@ class _HomeState extends State<Home> with AppBase {
           navigateTo(mContext, AppRoutes.cameraGallery);
           break;
         }
-        case 20: // Drawer
+      case 20: // Drawer
         {
           navigateTo(mContext, AppRoutes.drawerHome);
           break;
         }
-        case 21: // WebSocket
+      case 21: // WebSocket
         {
           navigateTo(mContext, AppRoutes.websocket);
+          break;
+        }
+      case 22: // Check Internet
+        {
+          navigateTo(mContext, AppRoutes.checkInternet);
+          break;
+        }
+      case 23: // Location (GPS)
+        {
+          navigateTo(mContext, AppRoutes.location);
           break;
         }
       default:

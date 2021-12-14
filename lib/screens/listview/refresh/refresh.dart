@@ -11,7 +11,26 @@ class MyPullToRefresh extends StatefulWidget {
   _MyPullToRefreshState createState() => _MyPullToRefreshState();
 }
 
-class _MyPullToRefreshState extends State<MyPullToRefresh> with AppBase {
+class _MyPullToRefreshState extends State<MyPullToRefresh>
+    with AppBase, SingleTickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    appPrint('Listview Refresh Tab');
+    tabController = TabController(length: 2, vsync: this);
+    tabController.addListener(() {
+      appPrint(tabController.index);
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    tabController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) => buildRefreshListView();
 
@@ -38,17 +57,19 @@ class _MyPullToRefreshState extends State<MyPullToRefresh> with AppBase {
                   Radius.circular(30),
                 ),
               ),
-              child: const TabBar(
+              child: TabBar(
+                controller: tabController,
                 labelColor: Colors.lightBlue,
-                labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                labelStyle: const TextStyle(fontWeight: FontWeight.bold),
                 unselectedLabelColor: Colors.black54,
-                unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
+                unselectedLabelStyle:
+                    const TextStyle(fontWeight: FontWeight.normal),
                 indicatorSize: TabBarIndicatorSize.tab,
-                indicatorPadding: EdgeInsets.only(
+                indicatorPadding: const EdgeInsets.only(
                     left: 15.0, top: 0.0, right: 15.0, bottom: 0.0),
                 indicatorColor: Colors.lightBlue,
                 isScrollable: false,
-                tabs: [
+                tabs: const [
                   Tab(
                     child: Text(
                       "ListView",
@@ -70,8 +91,9 @@ class _MyPullToRefreshState extends State<MyPullToRefresh> with AppBase {
         body: buildTabBarView(),
       );
 
-  Widget buildTabBarView() => const TabBarView(
-        children: [
+  Widget buildTabBarView() => TabBarView(
+        controller: tabController,
+        children: const [
           MyListRefresh(),
           MyGridRefresh(),
         ],

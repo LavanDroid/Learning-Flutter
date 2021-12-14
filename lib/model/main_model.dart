@@ -94,5 +94,13 @@ class CatalogModel {
       name: 'WebSocket',
       id: 21,
     ),
+    MainModel(
+      name: 'Check Internet',
+      id: 22,
+    ),
+    MainModel(
+      name: 'Location (GPS)',
+      id: 23,
+    ),
   ];
 }

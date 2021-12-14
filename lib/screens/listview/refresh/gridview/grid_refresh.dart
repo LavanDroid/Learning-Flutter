@@ -25,7 +25,7 @@ class _MyGridRefreshState extends State<MyGridRefresh> with AppBase {
 
   Future loadList() async {
     // keyRefresh.currentState?.show();
-    await Future.delayed(const Duration(milliseconds: 400));
+    await Future.delayed(const Duration(milliseconds: 1000));
 
     final random = Random();
     final data = List.generate(100, (_) => random.nextInt(100));

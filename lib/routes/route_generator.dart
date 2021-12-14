@@ -10,8 +10,10 @@ import 'package:flutter_demo/screens/date_time_picker/my_date_time.dart';
 import 'package:flutter_demo/screens/dialog/my_dialog.dart';
 import 'package:flutter_demo/screens/dropdown/my_dropdown.dart';
 import 'package:flutter_demo/screens/expansion_tile/expansion_tile.dart';
+import 'package:flutter_demo/screens/internet/internet.dart';
 import 'package:flutter_demo/screens/intro/intro.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
+import 'package:flutter_demo/screens/location/location.dart';
 import 'package:flutter_demo/screens/navigation_drawer/my_drawer_home.dart';
 import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_contact.dart';
 import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_event.dart';
@@ -42,7 +44,8 @@ class RouteGenerator {
     switch (settings.name) {
       case AppRoutes.spalsh:
         return MaterialPageRoute(
-          builder: (_) => const SplashScreen(),
+           builder: (_) => const SplashScreen(),
+          //builder: (_) => const DummyHomePage2(),
         );
 
       case AppRoutes.home:
@@ -177,6 +180,16 @@ class RouteGenerator {
       case AppRoutes.websocket:
         return MaterialPageRoute(
           builder: (_) => MyWebSocket(),
+        );
+
+      case AppRoutes.checkInternet:
+        return MaterialPageRoute(
+          builder: (_) => const MyCheckInternet(),
+        );
+
+      case AppRoutes.location:
+        return MaterialPageRoute(
+          builder: (_) => const MyLocation(),
         );
 
       default:
