@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/screens/listview/builder/animator.dart';
 
 import 'builder_model.dart';
 
@@ -15,7 +16,37 @@ class MyItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return WidgetANimator(
+      child: Card(
+        child: ListTile(
+          leading: CachedNetworkImage(
+            imageUrl: item.img,
+            imageBuilder: (context, imageProvider) => Container(
+              width: 45.0,
+              height: 45.0,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+              ),
+            ),
+            placeholder: (context, url) => Container(
+              width: 18,
+              height: 18,
+              margin: const EdgeInsets.all(5),
+              child: const CircularProgressIndicator(
+                strokeWidth: 1.5,
+              ),
+            ),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
+          title: Text(item.name),
+          subtitle: const Text('This is subtitle'),
+          onTap: onTap,
+        ),
+      ),
+    );
+
+    /* return Card(
       child: ListTile(
         // leading: CircleAvatar(
         //   // backgroundImage: AssetImage(images[index]),
@@ -58,6 +89,6 @@ class MyItemWidget extends StatelessWidget {
         subtitle: const Text('This is subtitle'),
         onTap: onTap,
       ),
-    );
+    ); */
   }
 }
