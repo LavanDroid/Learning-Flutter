@@ -60,6 +60,8 @@ dependencies:
   geolocator: ^8.0.1
   # Get address from latitude and longitude
   geocoding: ^2.0.1
+  #List items can be grouped to sections
+  grouped_list: ^4.1.0
 
 
 dev_dependencies:

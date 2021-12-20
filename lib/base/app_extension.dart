@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants/app_constants.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'dart:developer' as developer;
 
 class AppPrint {
   call(dynamic msg) {
@@ -22,13 +23,13 @@ class AppPrint {
 class AppErrorPrint {
   call(dynamic msg) {
     if (!AppConstants.inProduction) {
-      printError('$msg');
+      printError('🛑 $msg');
     }
   }
 
   static void getStaticPrint(dynamic e) {
     if (!AppConstants.inProduction) {
-      printError('$e');
+      printError('🛑 $e');
     }
   }
 }
@@ -43,13 +44,15 @@ Magenta: \x1B[35m
 Cyan:    \x1B[36m
 White:   \x1B[37m
 Reset:   \x1B[0m
- */
+ 
 void printWarning(String text) {
-  print('\x1B[33m$text\x1B[0m');
+  developer.log('\x1B[33m$text\x1B[0m');
 }
+*/
 
 void printError(String text) {
-  print('\x1B[31m$text\x1B[0m');
+  //? developer.log does not display information on the terminal when in release mode.
+  developer.log('\x1B[31m$text\x1B[0m');
 }
 
 class ShowToast {

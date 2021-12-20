@@ -3,9 +3,10 @@ import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/listview/group_list/group_list.dart';
 import 'package:flutter_demo/screens/listview/refresh/refresh.dart';
 
-import 'list_builder/my_list_builder.dart';
+import 'builder/my_list_builder.dart';
 import 'search/my_search_list.dart';
 import 'separated/my_separated.dart';
 import 'simple/my_simple_list.dart';
@@ -26,7 +27,7 @@ class _MyListViewState extends State<MyListView> with AppBase {
   ]; */
   @override
   Widget build(BuildContext context) => DefaultTabController(
-        length: 5,
+        length: 6,
         child: buildAppBar(),
       );
 
@@ -51,6 +52,7 @@ class _MyListViewState extends State<MyListView> with AppBase {
                 MySeparated(),
                 MySearchList(),
                 MyPullToRefresh(),
+                MyGroupList(),
                 // ...mTabScreen.map(Widget widget){}.toList(),
               ],
             ),
@@ -86,6 +88,9 @@ class _MyListViewState extends State<MyListView> with AppBase {
           ),
           Tab(
             text: 'Pull To Refresh',
+          ),
+          Tab(
+            text: 'Group',
           ),
         ],
       ),

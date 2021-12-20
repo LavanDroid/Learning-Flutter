@@ -19,7 +19,7 @@ class UserStorage {
         }
       }
     } on Exception catch (e) {
-      AppPrint.getStaticPrint('DeleteMultipleKey Ex: $e');
+      AppErrorPrint.getStaticPrint('DeleteMultipleKey Ex: $e');
     }
   }
 
@@ -77,7 +77,7 @@ class UserStorage {
       final value = json.encode(list);
       await storage.write(key: key, value: value);
     } on Exception catch (e) {
-      AppPrint.getStaticPrint('Set storage list Ex: $e');
+      AppErrorPrint.getStaticPrint('Set storage list Ex: $e');
     }
   }
 
@@ -86,7 +86,7 @@ class UserStorage {
       final value = await storage.read(key: key);
       return value == null ? null : List<String>.from(json.decode(value));
     } on Exception catch (e) {
-      AppPrint.getStaticPrint('Get storage list Ex: $e');
+      AppErrorPrint.getStaticPrint('Get storage list Ex: $e');
     }
   }
 

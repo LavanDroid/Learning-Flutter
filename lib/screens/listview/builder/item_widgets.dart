@@ -7,8 +7,11 @@ class MyItemWidget extends StatelessWidget {
   final BuilderModel item;
   final VoidCallback onTap;
 
-  const MyItemWidget({Key? key, required this.item, required this.onTap})
-      : super(key: key);
+  const MyItemWidget({
+    Key? key,
+    required this.item,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
