@@ -14,11 +14,12 @@ import 'package:flutter_demo/screens/internet/internet.dart';
 import 'package:flutter_demo/screens/intro/intro.dart';
 import 'package:flutter_demo/screens/listview/my_listview.dart';
 import 'package:flutter_demo/screens/location/location.dart';
-import 'package:flutter_demo/screens/navigation_drawer/my_drawer_home.dart';
-import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_contact.dart';
-import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_event.dart';
-import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_notification.dart';
-import 'package:flutter_demo/screens/navigation_drawer/pages/drawer_profile.dart';
+import 'package:flutter_demo/screens/navigation_drawer/my_drawer.dart';
+import 'package:flutter_demo/screens/navigation_drawer/normal/pages/drawer_home.dart';
+import 'package:flutter_demo/screens/navigation_drawer/normal/pages/drawer_contact.dart';
+import 'package:flutter_demo/screens/navigation_drawer/normal/pages/drawer_event.dart';
+import 'package:flutter_demo/screens/navigation_drawer/normal/pages/drawer_notification.dart';
+import 'package:flutter_demo/screens/navigation_drawer/normal/pages/drawer_profile.dart';
 import 'package:flutter_demo/screens/popup_menu/my_popup_menu.dart';
 import 'package:flutter_demo/screens/radio_button/my_radio.dart';
 import 'package:flutter_demo/screens/signature/signature.dart';
@@ -44,7 +45,7 @@ class RouteGenerator {
     switch (settings.name) {
       case AppRoutes.spalsh:
         return MaterialPageRoute(
-           builder: (_) => const SplashScreen(),
+          builder: (_) => const SplashScreen(),
           //builder: (_) => const DummyHomePage2(),
         );
 
@@ -152,9 +153,14 @@ class RouteGenerator {
           builder: (_) => const MyCameraGallery(),
         );
 
+      case AppRoutes.myDrawer:
+        return MaterialPageRoute(
+          builder: (_) => const MyDrawer(),
+        );
+
       case AppRoutes.drawerHome:
         return MaterialPageRoute(
-          builder: (_) => DrawerHome(),
+          builder: (_) => const DrawerHome(),
         );
 
       case AppRoutes.drawerProfile:

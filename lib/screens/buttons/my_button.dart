@@ -628,7 +628,8 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
   Widget buildText() {
     return Text(
       widget.data,
-      style: const TextStyle(color: Colors.black, fontSize: 24),
+      style: const TextStyle(
+          color: Colors.pink, fontSize: 24, fontWeight: FontWeight.w700),
     );
   }
 

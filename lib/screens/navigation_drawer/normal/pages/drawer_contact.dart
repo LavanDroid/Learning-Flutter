@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/screens/navigation_drawer/widget/navigation_drawer.dart';
+import 'package:flutter_demo/screens/navigation_drawer/normal/widget/navigation_drawer.dart';
 
 class DrawerContact extends StatelessWidget {
   const DrawerContact({Key? key}) : super(key: key);

@@ -15,7 +15,7 @@ class AppBase {
   // void myVeeraMethod();
 
   ///? Move to the next page, remain the stack
-  navigateTo(BuildContext mContext, String routePage, {String data = ''}) {
+  navigateTo(BuildContext mContext, String routePage, {dynamic data = ''}) {
     if (data.isNotEmpty) {
       Navigator.pushNamed(mContext, routePage, arguments: data);
     } else {

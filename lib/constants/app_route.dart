@@ -24,6 +24,7 @@ class AppRoutes {
   static const String checkInternet = '/check_internet';
   static const String location = '/location_gps';
   // static const String toast = '/toast';
+  static const String myDrawer = '/my_drawer';
   static const String drawerHome = '/drawer_home';
   static const String drawerProfile = '/drawer_profile';
   static const String drawerContact = '/drawer_contact';

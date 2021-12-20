@@ -137,7 +137,8 @@ class _HomeState extends State<Home> with AppBase {
     switch (item.id) {
       case 1: //Button
         {
-          navigateTo(mContext, AppRoutes.button, data: 'Data from home \u265A');
+          navigateTo(mContext, AppRoutes.button,
+              data: '\u265A Message from home \u265A');
           break;
         }
       case 2: // Toast
@@ -239,7 +240,7 @@ class _HomeState extends State<Home> with AppBase {
         }
       case 20: // Drawer
         {
-          navigateTo(mContext, AppRoutes.drawerHome);
+          navigateTo(mContext, AppRoutes.myDrawer);
           break;
         }
       case 21: // WebSocket
