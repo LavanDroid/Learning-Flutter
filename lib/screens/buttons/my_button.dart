@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
+import 'package:flutter_demo/model/bundle.dart';
 import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
 
 import 'outline_gradient_button.dart';
 
 class MyButtons extends StatefulWidget {
-  final String data;
+  final AppBundle appBundle;
 
   const MyButtons({
     Key? key,
-    required this.data,
+    required this.appBundle,
   }) : super(key: key);
   //static const String routeName = '/MyButtons';
 
@@ -627,9 +628,9 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
 
   Widget buildText() {
     return Text(
-      widget.data,
-      style: const TextStyle(
-          color: Colors.pink, fontSize: 24, fontWeight: FontWeight.w700),
+      widget.appBundle.bundleString ?? 'Check ata not pass',
+      style: TextStyle(
+          color: Colors.pink[900], fontSize: 24, fontWeight: FontWeight.w700),
     );
   }
 

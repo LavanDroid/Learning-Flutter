@@ -84,10 +84,10 @@ class _MyDialogState extends State<MyDialog> with AppBase {
     showDialog(
       context: context,
       builder: (context) => SimpleDialog(
-        title: const Text('Flutter Dialog'),
+        title: const Text('Alert!'),
         contentPadding: const EdgeInsets.all(20.0),
         children: [
-          const Text('Alert!'),
+          const Text('Simple Flutter Dialog'),
           const SizedBox(height: 15.0),
           TextButton(
             onPressed: () {

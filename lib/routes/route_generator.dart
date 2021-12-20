@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants/app_constants.dart';
 import 'package:flutter_demo/constants/app_route.dart';
 import 'package:flutter_demo/home/home.dart';
+import 'package:flutter_demo/model/bundle.dart';
 import 'package:flutter_demo/screens/buttons/my_button.dart';
 import 'package:flutter_demo/screens/camera_gallery/camera_gallery.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
@@ -69,7 +70,7 @@ class RouteGenerator {
         } */
         return MaterialPageRoute(
           builder: (_) => MyButtons(
-            data: args as String,
+            appBundle: args as AppBundle,
           ),
         );
 

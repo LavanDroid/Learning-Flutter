@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/model/bundle.dart';
 
 import 'app_extension.dart';
 
@@ -15,9 +16,11 @@ class AppBase {
   // void myVeeraMethod();
 
   ///? Move to the next page, remain the stack
-  navigateTo(BuildContext mContext, String routePage, {dynamic data = ''}) {
-    if (data.isNotEmpty) {
-      Navigator.pushNamed(mContext, routePage, arguments: data);
+  // navigateTo(BuildContext mContext, String routePage, AppBundle? data) {
+  navigateTo(BuildContext mContext, String routePage,
+      {AppBundle? bundle}) {
+    if (bundle != null) {
+      Navigator.pushNamed(mContext, routePage, arguments: bundle);
     } else {
       Navigator.pushNamed(mContext, routePage);
     }
@@ -26,9 +29,9 @@ class AppBase {
   ///? Move to the next page, replaces the current page,
   ///? but still remain the stack
   navigateToReplace(BuildContext mContext, String routePage,
-      {String data = ''}) {
-    if (data.isNotEmpty) {
-      Navigator.pushReplacementNamed(mContext, routePage, arguments: data);
+      {AppBundle? bundle}) {
+    if (bundle != null) {
+      Navigator.pushReplacementNamed(mContext, routePage, arguments: bundle);
     } else {
       Navigator.pushReplacementNamed(mContext, routePage);
     }

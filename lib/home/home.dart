@@ -3,6 +3,7 @@ import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_route.dart';
 import 'package:flutter_demo/constants/app_string.dart';
+import 'package:flutter_demo/model/bundle.dart';
 import 'package:flutter_demo/model/main_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -137,8 +138,10 @@ class _HomeState extends State<Home> with AppBase {
     switch (item.id) {
       case 1: //Button
         {
-          navigateTo(mContext, AppRoutes.button,
-              data: '\u265A Message from home \u265A');
+          AppBundle appBundle = AppBundle();
+          appBundle.bundleString = '\u265A Message from home screen \u265A';
+
+          navigateTo(mContext, AppRoutes.button, bundle: appBundle);
           break;
         }
       case 2: // Toast
