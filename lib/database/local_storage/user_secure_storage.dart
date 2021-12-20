@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_demo/base/app_extension.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class UserStorage {
@@ -7,6 +8,20 @@ class UserStorage {
 
   static Future deleteSingleKey(String key) async =>
       await storage.delete(key: key);
+
+  static Future deleteMultipleKey(List<String> keys) async {
+    try {
+      dynamic value;
+      for (final String removedKey in keys) {
+        value = await storage.read(key: removedKey);
+        if (value != null) {
+          deleteSingleKey(removedKey);
+        }
+      }
+    } on Exception catch (e) {
+      AppPrint.getStaticPrint('DeleteMultipleKey Ex: $e');
+    }
+  }
 
   static Future deleteAll() async => await storage.deleteAll();
 
@@ -58,13 +73,21 @@ class UserStorage {
 
   //* List<String>
   static Future setStringList(String key, List<String> list) async {
-    final value = json.encode(list);
-    await storage.write(key: key, value: value);
+    try {
+      final value = json.encode(list);
+      await storage.write(key: key, value: value);
+    } on Exception catch (e) {
+      AppPrint.getStaticPrint('Set storage list Ex: $e');
+    }
   }
 
   static Future<List<String>?> getStringList(String key) async {
-    final value = await storage.read(key: key);
-    return value == null ? null : List<String>.from(json.decode(value));
+    try {
+      final value = await storage.read(key: key);
+      return value == null ? null : List<String>.from(json.decode(value));
+    } on Exception catch (e) {
+      AppPrint.getStaticPrint('Get storage list Ex: $e');
+    }
   }
 
   //* Model class

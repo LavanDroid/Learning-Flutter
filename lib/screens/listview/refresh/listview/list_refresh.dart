@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 
-import '../refresh_widget.dart';
 
 class MyListRefresh extends StatefulWidget {
   const MyListRefresh({Key? key}) : super(key: key);

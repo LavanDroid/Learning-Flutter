@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
+import 'package:flutter_demo/base/app_extension.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_route.dart';
 import 'package:flutter_demo/constants/app_string.dart';
@@ -55,6 +56,7 @@ class _HomeState extends State<Home> with AppBase {
                     print('Clicked More');
                     // appPrint('inProduction Mode : $inProduction');
                     appPrint('inProduction Mode');
+                    appErrorPrint('inProduction Mode');
                   },
                   icon: const Icon(Icons.more_vert))
             ],

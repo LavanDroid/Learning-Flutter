@@ -46,30 +46,28 @@ class _DummyHomePageState extends State<DummyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TabButton(
-                      name: 'تب اول',
-                      pageNumber: 0,
-                      selectedPage: _selectedPage,
-                      onTap: () => _changePage(0),
-                    ),
-                    TabButton(
-                      name: 'تب دوم',
-                      pageNumber: 1,
-                      selectedPage: _selectedPage,
-                      onTap: () => _changePage(1),
-                    ),
-                    TabButton(
-                      name: 'تب سوم',
-                      pageNumber: 2,
-                      selectedPage: _selectedPage,
-                      onTap: () => _changePage(2),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TabButton(
+                    name: 'تب اول',
+                    pageNumber: 0,
+                    selectedPage: _selectedPage,
+                    onTap: () => _changePage(0),
+                  ),
+                  TabButton(
+                    name: 'تب دوم',
+                    pageNumber: 1,
+                    selectedPage: _selectedPage,
+                    onTap: () => _changePage(1),
+                  ),
+                  TabButton(
+                    name: 'تب سوم',
+                    pageNumber: 2,
+                    selectedPage: _selectedPage,
+                    onTap: () => _changePage(2),
+                  ),
+                ],
               ),
               Expanded(
                   child: PageView(
@@ -79,7 +77,7 @@ class _DummyHomePageState extends State<DummyHomePage> {
                     _selectedPage = page;
                   });
                 },
-                children: [
+                children: const [
                   TabPage(txt: 'صفحه اول'),
                   TabPage(txt: 'صفحه دوم'),
                   TabPage(txt: 'صفحه سوم'),
@@ -94,15 +92,17 @@ class _DummyHomePageState extends State<DummyHomePage> {
 }
 
 class TabButton extends StatelessWidget {
-  String name;
-  int selectedPage;
-  int pageNumber;
-  VoidCallback onTap;
-  TabButton(
-      {required this.name,
+  final String name;
+  final int selectedPage;
+  final int pageNumber;
+  final VoidCallback onTap;
+  const TabButton(
+      {Key? key,
+      required this.name,
       required this.selectedPage,
       required this.pageNumber,
-      required this.onTap});
+      required this.onTap})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -131,16 +131,14 @@ class TabButton extends StatelessWidget {
 }
 
 class TabPage extends StatelessWidget {
-  String txt;
-  TabPage({required this.txt});
+  final String txt;
+  const TabPage({Key? key, required this.txt}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          txt,
-          style: const TextStyle(fontSize: 20),
-        ),
+    return Center(
+      child: Text(
+        txt,
+        style: const TextStyle(fontSize: 20),
       ),
     );
   }

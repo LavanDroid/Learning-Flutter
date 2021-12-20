@@ -4,6 +4,7 @@ import 'app_extension.dart';
 
 class AppBase {
   late var appPrint = AppPrint();
+  late var appErrorPrint = AppErrorPrint();
   late var showToast = ShowToast();
   late var hideKeyBoard = HideKeyBoard();
   late var validateEmail = ValidateEmail();

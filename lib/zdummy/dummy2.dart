@@ -26,10 +26,10 @@ class DummyHomePage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Toggle Buttons'),
+        title: const Text('Toggle Buttons'),
       ),
       body: Column(
-        children: [
+        children: const [
           CustomTabBar(),
         ],
       ),
