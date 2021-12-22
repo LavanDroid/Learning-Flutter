@@ -123,20 +123,22 @@ class ValidateEmail {
 class ValidatePassword {
   //* Singleton logic
   ValidatePassword._privateConstructor();
-  static final ValidatePassword _instance = ValidatePassword._privateConstructor();
+  static final ValidatePassword _instance =
+      ValidatePassword._privateConstructor();
   factory ValidatePassword() {
     return _instance;
   }
 
   call(String pwd) {
-    /**
-    * r'^
+    /* 
+    r'^
     (?=.*[A-Z])       // should contain at least one upper case
     (?=.*[a-z])       // should contain at least one lower case
     (?=.*?[0-9])          // should contain at least one digit
     (?=.*?[!@#\$&*~]).{8,}  // should contain at least one Special character
     {8,25}      // min-8 max-25
-    $ */
+    $ 
+     */
     final RegExp regex = RegExp(
         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,25}$');
     if (pwd.isEmpty) {
