@@ -17,8 +17,7 @@ class AppBase {
 
   ///? Move to the next page, remain the stack
   // navigateTo(BuildContext mContext, String routePage, AppBundle? data) {
-  navigateTo(BuildContext mContext, String routePage,
-      {AppBundle? bundle}) {
+  navigateTo(BuildContext mContext, String routePage, {AppBundle? bundle}) {
     if (bundle != null) {
       Navigator.pushNamed(mContext, routePage, arguments: bundle);
     } else {

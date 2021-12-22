@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  //* Singleton logic
+  AppColors._privateConstructor();
+  static final AppColors _instance = AppColors._privateConstructor();
+  factory AppColors() {
+    return _instance;
+  }
+
   static const Color blue = Color(0xff001bff);
   static const Color yellow = Color(0xffffff00);
   static const Color grey = Color(0xfff0f0f0);

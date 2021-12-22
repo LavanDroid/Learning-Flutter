@@ -6,6 +6,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:developer' as developer;
 
 class AppPrint {
+  //* Singleton logic
+  AppPrint._privateConstructor();
+  static final AppPrint _instance = AppPrint._privateConstructor();
+  factory AppPrint() {
+    return _instance;
+  }
+
   call(dynamic msg) {
     if (!AppConstants.inProduction) {
       //print('Veera : $msg -> ' + (AppConstants.inProduction.toString()));
@@ -21,6 +28,13 @@ class AppPrint {
 }
 
 class AppErrorPrint {
+  //* Singleton logic
+  AppErrorPrint._privateConstructor();
+  static final AppErrorPrint _instance = AppErrorPrint._privateConstructor();
+  factory AppErrorPrint() {
+    return _instance;
+  }
+
   call(dynamic msg) {
     if (!AppConstants.inProduction) {
       printError('🛑 $msg');
@@ -56,6 +70,13 @@ void printError(String text) {
 }
 
 class ShowToast {
+  //* Singleton logic
+  ShowToast._privateConstructor();
+  static final ShowToast _instance = ShowToast._privateConstructor();
+  factory ShowToast() {
+    return _instance;
+  }
+
   call(String msg) {
     Fluttertoast.cancel();
     Fluttertoast.showToast(msg: msg);
@@ -63,6 +84,13 @@ class ShowToast {
 }
 
 class HideKeyBoard {
+  //* Singleton logic
+  HideKeyBoard._privateConstructor();
+  static final HideKeyBoard _instance = HideKeyBoard._privateConstructor();
+  factory HideKeyBoard() {
+    return _instance;
+  }
+
   call() {
     FocusManager.instance.primaryFocus?.unfocus();
   }
@@ -72,6 +100,13 @@ class HideKeyBoard {
 }
 
 class ValidateEmail {
+  //* Singleton logic
+  ValidateEmail._privateConstructor();
+  static final ValidateEmail _instance = ValidateEmail._privateConstructor();
+  factory ValidateEmail() {
+    return _instance;
+  }
+
   call(String email) {
     final RegExp regex = RegExp(
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)| (\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
@@ -86,6 +121,13 @@ class ValidateEmail {
 }
 
 class ValidatePassword {
+  //* Singleton logic
+  ValidatePassword._privateConstructor();
+  static final ValidatePassword _instance = ValidatePassword._privateConstructor();
+  factory ValidatePassword() {
+    return _instance;
+  }
+
   call(String pwd) {
     /**
     * r'^

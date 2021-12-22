@@ -4,6 +4,13 @@ import 'package:flutter_demo/base/app_extension.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class UserStorage {
+  //* Singleton logic
+  UserStorage._privateConstructor();
+  static final UserStorage _instance = UserStorage._privateConstructor();
+  factory UserStorage() {
+    return _instance;
+  }
+
   static const storage = FlutterSecureStorage();
 
   static Future deleteSingleKey(String key) async =>
