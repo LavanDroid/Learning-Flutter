@@ -1,7 +1,8 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/constants/app_image.dart';
+import 'package:flutter_demo/screens/custom_app_bar/common_app_bar.dart';
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 
 class MySignature extends StatefulWidget {
@@ -19,7 +20,7 @@ class _MySignatureState extends State<MySignature> with AppBase {
 
   Widget buildView() => Scaffold(
       appBar: const CommonAppBar(
-        icon: 'assets/images/ic_custom_back.png',
+        icon: AppImages.icCustomBack,
         title: 'Signature',
       ),
       body: GestureDetector(

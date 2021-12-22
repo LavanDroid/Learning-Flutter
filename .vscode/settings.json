@@ -1,0 +1,25 @@
+{
+    "cSpell.enableFiletypes": [
+        "dart"
+    ],
+    "cSpell.words": [
+        "AHSL",
+        "ARGB",
+        "autofocus",
+        "autovalidate",
+        "cupertino",
+        "Fluttertoast",
+        "geolocator",
+        "horiz",
+        "ifelse",
+        "listview",
+        "LTRB",
+        "LTWH",
+        "Placemark",
+        "RGBO",
+        "signaturepad",
+        "syncfusion",
+        "unfocus",
+        "vsync"
+    ]
+}

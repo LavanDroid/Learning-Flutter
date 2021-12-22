@@ -15,14 +15,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with AppBase {
-  late List<MainModel> mListview;
+  late List<MainModel> mListView;
 
   @override
   void initState() {
     super.initState();
-    mListview = CatalogModel.items;
-    //mListview.sort();
-    mListview.sort((a, b) => a.name.compareTo(b.name));
+    mListView = CatalogModel.items;
+    //mListView.sort();
+    mListView.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> with AppBase {
               ),
               /* child: Center(
                 child: Text(
-                  'Veera',
+                  'MyText',
                   style: TextStyle(fontSize: 24.0),
                 ),
               ), */
@@ -99,11 +99,11 @@ class _HomeState extends State<Home> with AppBase {
               children: [
                 Expanded(
                   child: ListView.builder(
-                    itemCount: mListview.length,
+                    itemCount: mListView.length,
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int idx) {
-                      final item = mListview[idx];
+                      final item = mListView[idx];
                       return Card(
                         elevation: 5.0,
                         child: ListTile(
@@ -168,7 +168,7 @@ class _HomeState extends State<Home> with AppBase {
         }
       case 5: //TextView
         {
-          navigateTo(mContext, AppRoutes.textview);
+          navigateTo(mContext, AppRoutes.textView);
           break;
         }
       case 6: //TextField
@@ -178,10 +178,10 @@ class _HomeState extends State<Home> with AppBase {
         }
       case 7: //ListView
         {
-          navigateTo(mContext, AppRoutes.listview);
+          navigateTo(mContext, AppRoutes.listView);
           break;
         }
-      case 8: //Dropdowm
+      case 8: //DropDown
         {
           navigateTo(mContext, AppRoutes.dropdown);
           break;

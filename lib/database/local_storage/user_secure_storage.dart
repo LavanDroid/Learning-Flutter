@@ -91,15 +91,15 @@ class UserStorage {
   }
 
   //* Model class
-  /* static Future setUserModel(String key, UserModel usermodel) async {
-    final value = json.encode(usermodel.toJson());
+  /* static Future setUserModel(String key, UserModel userModel) async {
+    final value = json.encode(userModel.toJson());
     await storage.write(key: key, value: value);
   }
 
   static Future<UserModel>? getUserModel(String key) async {
     final value = await storage.read(key: key);
     if (value?.isNotEmpty ?? false)
-      return Usermodel.fromJson(json.decode(value!));
+      return UserModel.fromJson(json.decode(value!));
 
     return null;
   } */

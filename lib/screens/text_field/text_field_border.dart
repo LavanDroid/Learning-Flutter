@@ -41,7 +41,7 @@ class _TextFieldBorderState extends State<TextFieldBorder> with AppBase {
                 buildText('Outline Rounded'),
                 buildOutlineRounded(),
                 buildText('shadow'),
-                buildshadow(),
+                buildShadow(),
                 // buildText('Beveled'),
                 // buildBeveled(),
                 const SizedBox(height: 500.0),
@@ -90,7 +90,7 @@ class _TextFieldBorderState extends State<TextFieldBorder> with AppBase {
         ),
       );
 
-  buildshadow() => Container(
+  buildShadow() => Container(
         child: TextFormField(
           decoration: const InputDecoration(
             filled: true,

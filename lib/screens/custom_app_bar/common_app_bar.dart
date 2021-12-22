@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_demo/appbase/app_extension.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   //const BaseAppBar({Key? key}) : super(key: key);
@@ -38,7 +37,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
               : IconButton(
                   onPressed: () {
                     if (whereFrom != null &&
-                        'Veera'.toLowerCase() == whereFrom?.toLowerCase()) {
+                        'Check'.toLowerCase() == whereFrom?.toLowerCase()) {
                       showToast(context, 'Button Back Arrow Locked');
                     } else {
                       Navigator.pop(context, true);

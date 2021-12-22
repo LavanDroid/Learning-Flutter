@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/custom_app_bar/common_app_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui' as ui;
 
 import 'gradient_text.dart';
 import 'marquee_widget.dart';
-import 'readmore.dart';
+import 'read_more.dart';
 
 class MyTextView extends StatefulWidget {
   const MyTextView({Key? key}) : super(key: key);
@@ -53,9 +53,9 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
                 const SizedBox(height: 25.0),
                 _wFontFamilyText(),
                 const SizedBox(height: 25.0),
-                _wPaintTextview(),
+                _wPaintTextView(),
                 const SizedBox(height: 25.0),
-                _wMultipleLineTextview(),
+                _wMultipleLineTextView(),
                 const SizedBox(height: 25.0),
                 _wReadMoreText(),
                 const SizedBox(height: 25.0),
@@ -63,9 +63,9 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
                 const SizedBox(height: 25.0),
                 _wRichTextIcon(),
                 const SizedBox(height: 25.0),
-                _wMarqueeTextview(),
+                _wMarqueeTextView(),
                 const SizedBox(height: 25.0),
-                _wStackTextview(),
+                _wStackTextView(),
                 const SizedBox(height: 25.0),
                 _wCustomGradientRainbow(),
                 const SizedBox(height: 25.0),
@@ -73,7 +73,7 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
                 const SizedBox(height: 25.0),
                 _wCustomGradientText(),
                 const SizedBox(height: 25.0),
-                _wGradientTextviewTwo(),
+                _wGradientTextViewTwo(),
                 const SizedBox(height: 50.0),
               ],
             ),
@@ -115,11 +115,11 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         ),
       );
 
-  Widget _wPaintTextview() => Text(
-        'Paint Textview',
+  Widget _wPaintTextView() => Text(
+        'Paint TextView',
         style: TextStyle(
           fontSize: 35.0,
-          //fontFamily: "Didoni",
+          //fontFamily: "gos",
           fontWeight: FontWeight.bold,
           foreground: Paint()
             ..color = Colors.red
@@ -128,8 +128,8 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         ),
       );
 
-  Widget _wMultipleLineTextview() => const Text(
-        'Multiple Line Textview : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+  Widget _wMultipleLineTextView() => const Text(
+        'Multiple Line TextView : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Leeriest sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Lauds PageMaker including versions of Lorem Ipsum.',
         style: TextStyle(
           fontSize: 17.0,
           color: Colors.black,
@@ -190,20 +190,20 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
             ]),
       );
 
-  Widget _wMarqueeTextview() => const SizedBox(
+  Widget _wMarqueeTextView() => const SizedBox(
         width: double.infinity,
         child: MarqueeWidget(
           direction: Axis.horizontal,
           child: Text(
-              'My Marqyee TextView in flutter 12345 67890 abcd efgh ijkl mnop qrst uvwxyz'),
+              'My Marquee TextView in flutter 12345 67890 latest and breaking News today in tamil and english'),
         ),
       );
 
-  Widget _wStackTextview() => Stack(
+  Widget _wStackTextView() => Stack(
         children: <Widget>[
           // Stroked text as border.
           Text(
-            'Stack Textview',
+            'Stack TextView',
             style: TextStyle(
               fontSize: 40,
               foreground: Paint()
@@ -214,7 +214,7 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
           ),
           // Solid text as fill.
           Text(
-            'Stack Textview',
+            'Stack TextView',
             style: TextStyle(
               fontSize: 40,
               color: Colors.orange[300],
@@ -269,7 +269,7 @@ class _MyTextViewState extends State<MyTextView> with AppBase {
         ]),
       );
 
-  Widget _wGradientTextviewTwo() => Text(
+  Widget _wGradientTextViewTwo() => Text(
         'Paint Gradient',
         style: TextStyle(
             fontSize: 40,

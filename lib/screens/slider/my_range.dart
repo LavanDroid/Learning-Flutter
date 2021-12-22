@@ -10,10 +10,10 @@ class MyRangeSlider extends StatefulWidget {
 
 class _MyRangeSliderState extends State<MyRangeSlider> with AppBase {
   RangeValues mValue = const RangeValues(0.0, 5.0);
-  late RangeLabels mLable;
+  late RangeLabels mLabel;
   @override
   Widget build(BuildContext context) {
-    mLable = RangeLabels(
+    mLabel = RangeLabels(
       mValue.start.toString(),
       mValue.end.toString(),
     );
@@ -50,7 +50,7 @@ class _MyRangeSliderState extends State<MyRangeSlider> with AppBase {
           divisions: 10,
           min: 0.0,
           max: 5.0,
-          labels: mLable,
+          labels: mLabel,
           onChanged: (value) => setState(() => mValue = value),
         ),
       );

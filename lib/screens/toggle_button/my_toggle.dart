@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/custom_app_bar/common_app_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'toggle_switch.dart';
@@ -95,7 +95,7 @@ class _MyToggleButtonState extends State<MyToggleButton> with AppBase {
         initialLabelIndex: 0,
         minWidth: 80.0,
         totalSwitches: 3,
-        labels: const ['Jeya', 'Veera', 'Pandian'],
+        labels: const ['animal', 'vegetables', 'fruits'],
         onToggle: (index) {
           showToast(index.toString());
         },

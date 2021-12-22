@@ -127,13 +127,13 @@ class _ToggleSwitchState extends State<ToggleSwitch>
   /// Inactive background color
   Color? inactiveBgColor;
 
-  /// Inctive foreground color
+  /// Inactive foreground color
   Color? inactiveFgColor;
 
   /// Border color
   List<Color>? borderColor;
 
-  /// Border widtth
+  /// Border width
   double? borderWidth;
 
   /// Maintain selection state.

@@ -23,7 +23,7 @@ void main() {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Text('Veera App'),
+      home: Text('My New App'),
     );
   }
 } */
@@ -39,10 +39,10 @@ class _MyDemoState extends State<MyDemo> with AppBase {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Veera Flutter',
+      title: 'Demo Flutter',
       //debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.generateRoute,
-      initialRoute: AppRoutes.spalsh,
+      initialRoute: AppRoutes.splash,
     );
   }
 }

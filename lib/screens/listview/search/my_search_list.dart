@@ -18,7 +18,7 @@ class MySearchList extends StatefulWidget {
 class _MySearchListState extends State<MySearchList> with AppBase {
   List<Book> books = [];
   String query = '';
-  Timer? debouncer;
+  Timer? timer;
 
   @override
   void initState() {
@@ -29,7 +29,7 @@ class _MySearchListState extends State<MySearchList> with AppBase {
 
   @override
   void dispose() {
-    debouncer?.cancel();
+    timer?.cancel();
     super.dispose();
   }
 
@@ -37,11 +37,11 @@ class _MySearchListState extends State<MySearchList> with AppBase {
     VoidCallback callback, {
     Duration duration = const Duration(milliseconds: 800),
   }) {
-    if (debouncer != null) {
-      debouncer!.cancel();
+    if (timer != null) {
+      timer!.cancel();
     }
 
-    debouncer = Timer(duration, callback);
+    timer = Timer(duration, callback);
   }
 
   Future init() async {

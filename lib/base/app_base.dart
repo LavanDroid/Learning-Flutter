@@ -13,7 +13,7 @@ class AppBase {
   late var validateMobile = ValidateMobile();
 
   // ? This method can use, but i hide
-  // void myVeeraMethod();
+  // void myDummyMethod();
 
   ///? Move to the next page, remain the stack
   // navigateTo(BuildContext mContext, String routePage, AppBundle? data) {

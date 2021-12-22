@@ -29,7 +29,7 @@ class SeparatedList {
       name: 'List Two',
       id: 2,
       ic: Icons.access_alarm,
-      subTitle: 'SubtWO',
+      subTitle: 'SubTWO',
       img: 'https://picsum.photos/250?image=37',
     ),
     SeparatedModel(

@@ -30,7 +30,7 @@ class FullScreenDialog extends StatefulWidget {
 class _FullScreenDialogState extends State<FullScreenDialog> with AppBase {
   List<Book> booksList = [];
   String query = '';
-  Timer? debouncer;
+  Timer? timer;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _FullScreenDialogState extends State<FullScreenDialog> with AppBase {
 
   @override
   void dispose() {
-    debouncer?.cancel();
+    timer?.cancel();
     super.dispose();
   }
 
@@ -55,11 +55,11 @@ class _FullScreenDialogState extends State<FullScreenDialog> with AppBase {
     VoidCallback callback, {
     Duration duration = const Duration(milliseconds: 800),
   }) {
-    if (debouncer != null) {
-      debouncer!.cancel();
+    if (timer != null) {
+      timer!.cancel();
     }
 
-    debouncer = Timer(duration, callback);
+    timer = Timer(duration, callback);
   }
 
   @override

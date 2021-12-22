@@ -12,7 +12,7 @@ final introList = <SliderModel>[
     imageAssetPath: AppImages.bgIntroOne,
     title: 'Search',
     desc:
-        'Discover Restaurants offering the best fast food food near you on Foodwa',
+        'Discover Restaurants offering the best fast food food near you on Food',
   ),
   SliderModel(
     imageAssetPath: AppImages.bgIntroTwo,

@@ -33,12 +33,12 @@ class BuilderList {
       img: 'https://picsum.photos/250?image=21',
     ),
     BuilderModel(
-      name: "Textview",
+      name: "TextView",
       id: 5,
       img: 'https://picsum.photos/250?image=20',
     ),
     BuilderModel(
-      name: "Text Feild (Edittext)",
+      name: "Text Field (EditText)",
       id: 6,
       img: 'https://picsum.photos/250?image=16',
     ),
@@ -113,12 +113,12 @@ class BuilderList {
       img: 'http://lorempixel.com/200/200/animals/2/',
     ),
     BuilderModel(
-      name: "Textview",
+      name: "TextView",
       id: 5,
       img: 'http://lorempixel.com/200/200/food/2/',
     ),
     BuilderModel(
-      name: "Text Feild (Edittext)",
+      name: "Text Field (EditText)",
       id: 6,
       img: 'http://lorempixel.com/200/200/sports/2/',
     ),
@@ -181,12 +181,12 @@ BuilderModel(
       img: 'http://lorempixel.com/200/200/food/6/',
     ),
     BuilderModel(
-      name: "Textview",
+      name: "TextView",
       id: 18,
       img: 'http://lorempixel.com/200/200/sports/6/',
     ),
     BuilderModel(
-      name: "Text Feild (Edittext)",
+      name: "Text Field (EditText)",
       id: 19,
       img: 'http://lorempixel.com/200/200/animals/7/',
     ),

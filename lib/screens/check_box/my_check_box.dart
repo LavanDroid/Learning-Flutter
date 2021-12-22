@@ -3,7 +3,7 @@ import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/model/check_box_model.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/custom_app_bar/common_app_bar.dart';
 
 class MyCheckBox extends StatefulWidget {
   const MyCheckBox({Key? key}) : super(key: key);

@@ -8,7 +8,7 @@ import 'my_range.dart';
 import 'my_shape.dart';
 import 'my_size.dart';
 import 'my_vertical.dart';
-import 'tabbar_widget.dart';
+import 'tab_bar_widget.dart';
 
 class MySlider extends StatelessWidget {
   const MySlider({Key? key}) : super(key: key);

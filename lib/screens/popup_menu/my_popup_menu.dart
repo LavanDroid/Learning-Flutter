@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/custom_app_bar/common_app_bar.dart';
 
 class MyPopupMenu extends StatefulWidget {
   const MyPopupMenu({Key? key}) : super(key: key);
@@ -195,7 +195,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> with AppBase {
             },
             itemBuilder: (context) => [
               const PopupMenuItem(
-                child: Text('First'), //  jeya veera pandian
+                child: Text('First'), //  User custom settings
                 value: 1,
               ),
               const PopupMenuItem(

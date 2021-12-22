@@ -27,11 +27,11 @@ class CatalogModel {
       id: 4,
     ),
     MainModel(
-      name: 'Textview',
+      name: 'TextView',
       id: 5,
     ),
     MainModel(
-      name: 'Text Field (Edittext)',
+      name: 'Text Field (EditText)',
       id: 6,
     ),
     MainModel(

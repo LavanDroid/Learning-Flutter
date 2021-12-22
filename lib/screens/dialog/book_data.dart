@@ -1,5 +1,7 @@
 import 'package:flutter_demo/screens/listview/search/book.dart';
 
+// spell-checker:disable
+
 final allBooks = <Book>[
   const Book(
     id: 1,

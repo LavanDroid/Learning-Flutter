@@ -3,7 +3,7 @@ import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_colors.dart';
 import 'package:flutter_demo/constants/app_image.dart';
 import 'package:flutter_demo/model/bundle.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/custom_app_bar/common_app_bar.dart';
 
 import 'outline_gradient_button.dart';
 
@@ -46,7 +46,7 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
           appBar: CommonAppBar(
             icon: AppImages.icCustomBack,
             title: 'Buttons',
-            whereFrom: 'Veera',
+            whereFrom: 'Check',
             menuItem: [
               IconButton(
                 icon: const Icon(Icons.verified_user),
@@ -133,8 +133,8 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
               _wTextCustomOutlinedButton(),
               const SizedBox(height: 25.0),
               Wrap(
-                spacing: 24, // Horizantal space
-                runSpacing: 48, // Verical space
+                spacing: 24, // Horizontal space
+                runSpacing: 48, // Vertical space
                 runAlignment: WrapAlignment.center,
                 alignment: WrapAlignment.center,
                 crossAxisAlignment: WrapCrossAlignment.center,
@@ -168,7 +168,7 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
 
   Widget _wElevateButtonTwo() => ElevatedButton(
         onPressed: () => showToast('Elevated Button 2'),
-        child: const Text('Minmum Width & Height'),
+        child: const Text('Minimum Width & Height'),
         style: ElevatedButton.styleFrom(
           minimumSize: const Size(280.0, 55.0),
           textStyle: const TextStyle(fontSize: 28.0),
@@ -251,8 +251,8 @@ class _MyButtonsState extends State<MyButtons> with AppBase {
       );
 
   Widget _wOutlinedButtonOne() => OutlinedButton(
-        onPressed: () => showToast('Minmum Width & Height'),
-        child: const Text('Minmum W&H'),
+        onPressed: () => showToast('Minimum Width & Height'),
+        child: const Text('Minimum W&H'),
         style: OutlinedButton.styleFrom(
           minimumSize: const Size(280.0, 55.0),
           textStyle: const TextStyle(fontSize: 28.0),

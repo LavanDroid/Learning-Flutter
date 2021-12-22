@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/base/app_base.dart';
 import 'package:flutter_demo/constants/app_image.dart';
-import 'package:flutter_demo/screens/custom_appbar/common_appbar.dart';
+import 'package:flutter_demo/screens/custom_app_bar/common_app_bar.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -25,10 +25,10 @@ class _MyLocationState extends State<MyLocation> with AppBase {
           icon: AppImages.icCustomBack,
           title: 'Current Location (GPS)',
         ),
-        body: buildlocationScreen(),
+        body: buildLocationScreen(),
       );
 
-  Widget buildlocationScreen() => GestureDetector(
+  Widget buildLocationScreen() => GestureDetector(
         onTap: () => hideKeyBoard(),
         child: SafeArea(
           child: Container(
@@ -45,7 +45,7 @@ class _MyLocationState extends State<MyLocation> with AppBase {
                       fontWeight: FontWeight.bold, color: Colors.grey),
                   buildText(address, size: 16.0, color: Colors.black),
                   ElevatedButton(
-                      onPressed: () => getGPSLoaction(),
+                      onPressed: () => getGPSLocation(),
                       child: const Text('Get Location'))
                 ],
               ),
@@ -69,7 +69,7 @@ class _MyLocationState extends State<MyLocation> with AppBase {
         ),
       );
 
-  getGPSLoaction() async {
+  getGPSLocation() async {
     Position position = await getGeoLocationPosition();
     location = 'Lat: ${position.latitude} , Long: ${position.longitude}';
     appPrint('Location: ' + location);
@@ -78,26 +78,26 @@ class _MyLocationState extends State<MyLocation> with AppBase {
   }
 
   Future<void> getAddressFromLatLong(Position position) async {
-    List<Placemark> placemarks =
+    List<Placemark> placemark =
         await placemarkFromCoordinates(position.latitude, position.longitude);
-    appPrint(placemarks);
-    Placemark place = placemarks[0];
+    appPrint(placemark);
+    Placemark place = placemark[0];
     // String? street = (place.street ?? place.name ?? '');
     String? street = place.street!.isNotEmpty ? (place.street) : '';
     if (street!.isEmpty) {
       street = place.name!.isNotEmpty ? place.name : '';
     }
 
-    String? sublocality =
+    String? subLocality =
         place.subLocality!.isNotEmpty ? place.subLocality : '';
     String? administrativeArea = '';
-    if (sublocality!.isEmpty) {
+    if (subLocality!.isEmpty) {
       administrativeArea = place.administrativeArea!.isNotEmpty
           ? (place.administrativeArea! + ', ')
           : '';
     }
     address =
-        '$street, $sublocality, ${place.locality}, $administrativeArea ${place.postalCode}, ${place.country}';
+        '$street, $subLocality, ${place.locality}, $administrativeArea ${place.postalCode}, ${place.country}';
     setState(() {});
   }
 

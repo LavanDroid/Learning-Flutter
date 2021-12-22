@@ -6,7 +6,7 @@ import 'package:flutter_demo/model/bundle.dart';
 import 'package:flutter_demo/screens/buttons/my_button.dart';
 import 'package:flutter_demo/screens/camera_gallery/camera_gallery.dart';
 import 'package:flutter_demo/screens/check_box/my_check_box.dart';
-import 'package:flutter_demo/screens/custom_appbar/my_appbar.dart';
+import 'package:flutter_demo/screens/custom_app_bar/my_app_bar.dart';
 import 'package:flutter_demo/screens/date_time_picker/my_date_time.dart';
 import 'package:flutter_demo/screens/dialog/my_dialog.dart';
 import 'package:flutter_demo/screens/dropdown/my_dropdown.dart';
@@ -27,8 +27,8 @@ import 'package:flutter_demo/screens/signature/signature.dart';
 import 'package:flutter_demo/screens/slider/my_slider.dart';
 import 'package:flutter_demo/screens/splash/splash.dart';
 import 'package:flutter_demo/screens/switch_button/my_switch.dart';
-import 'package:flutter_demo/screens/textfield/my_textfield.dart';
-import 'package:flutter_demo/screens/textview/my_textview.dart';
+import 'package:flutter_demo/screens/text_field/my_text_field.dart';
+import 'package:flutter_demo/screens/text_view/my_text_view.dart';
 import 'package:flutter_demo/screens/toggle_button/my_toggle.dart';
 import 'package:flutter_demo/screens/websocket/web_socket.dart';
 
@@ -44,7 +44,7 @@ class RouteGenerator {
     }
 
     switch (settings.name) {
-      case AppRoutes.spalsh:
+      case AppRoutes.splash:
         return MaterialPageRoute(
           builder: (_) => const SplashScreen(),
           //builder: (_) => const DummyHomePage2(),
@@ -99,7 +99,7 @@ class RouteGenerator {
           builder: (_) => const MyDialog(),
         );
 
-      case AppRoutes.listview:
+      case AppRoutes.listView:
         return MaterialPageRoute(
           builder: (_) => const MyListView(),
         );
@@ -119,7 +119,7 @@ class RouteGenerator {
           builder: (_) => const MyTextField(),
         );
 
-      case AppRoutes.textview:
+      case AppRoutes.textView:
         return MaterialPageRoute(
           builder: (_) => const MyTextView(),
         );
